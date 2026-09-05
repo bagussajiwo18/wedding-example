@@ -56,6 +56,7 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
 }
 
 body {
@@ -1265,7 +1266,8 @@ img {
 }
 
 @media (max-width: 600px) {
-    .hero-names { font-size: 3.2rem; }
+    .hero-names { font-size: 2.6rem; }
+    .hero-quote { font-size: 0.9rem; padding: 0 10px; }
     .section-title { font-size: 2.2rem; }
     .couple-title-cover { font-size: 2.8rem; }
     .arabic-text { font-size: 1.4rem; }
