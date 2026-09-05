@@ -396,4 +396,3 @@ function initScrollReveal() {
 
     revealElements.forEach(el => revealObserver.observe(el));
 }
-
