@@ -1,0 +1,2365 @@
+/* ==========================================================================
+   LUXURY DIGITAL WEDDING INVITATION — STYLESHEET
+   Design Concept: Modern Editorial Luxury, Romantic & Minimalist
+   Colors: Dark Muted Slate, Warm Cream, Pure White, Refined Gold
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES & THEME TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+    --dark-bg: #3F4A50;
+    --dark-bg-deep: #323C41;
+    --dark-surface: #49555C;
+    --cream: #F5F3EE;
+    --cream-light: #FAF9F6;
+    --cream-dark: #EAE6DD;
+    --white: #FFFFFF;
+    --gold: #C9A85C;
+    --gold-light: #E0C788;
+    --gold-dark: #A9873E;
+    --gold-gradient: linear-gradient(135deg, #C9A85C 0%, #E8D39E 50%, #B89242 100%);
+    --gold-glow: rgba(201, 168, 92, 0.35);
+    
+    --text-dark: #303438;
+    --text-muted: #6B767C;
+    --text-light: #F5F3EE;
+    --text-light-muted: #CBD2D6;
+    
+    --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --font-script: 'Alex Brush', 'Great Vibes', cursive;
+    --font-sans: 'Plus Jakarta Sans', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    --radius-arch: 240px 240px 24px 24px;
+    --radius-card: 24px;
+    --radius-pill: 9999px;
+    --radius-sm: 12px;
+    
+    --shadow-subtle: 0 8px 24px rgba(0, 0, 0, 0.06);
+    --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.12);
+    --shadow-card: 0 12px 32px rgba(48, 52, 56, 0.08);
+    --shadow-gold: 0 8px 25px rgba(201, 168, 92, 0.25);
+    
+    --transition-fast: 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-cinematic: 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL RESET & BASE STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    background-color: #242B2F;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background-color: var(--dark-bg);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Scroll Lock when Cover is Active */
+body.locked {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-bg-deep);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button {
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. DESKTOP & MOBILE WRAPPER FRAMING
+   -------------------------------------------------------------------------- */
+.desktop-canvas {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: radial-gradient(circle at center, #3F4A50 0%, #20272B 100%);
+    position: relative;
+}
+
+/* Background Ambient Graphics for Desktop */
+.desktop-ambient {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .desktop-ambient {
+        display: block;
+    }
+    .desktop-ambient-text {
+        position: absolute;
+        font-family: var(--font-serif);
+        font-size: 14vw;
+        color: rgba(201, 168, 92, 0.03);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        white-space: nowrap;
+        user-select: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-10deg);
+    }
+    .desktop-decor-left {
+        position: absolute;
+        left: 4vw;
+        top: 20%;
+        width: 180px;
+        opacity: 0.35;
+        animation: floatDecorSlow 12s ease-in-out infinite alternate;
+    }
+    .desktop-decor-right {
+        position: absolute;
+        right: 4vw;
+        bottom: 15%;
+        width: 180px;
+        opacity: 0.35;
+        animation: floatDecorSlow 14s ease-in-out infinite alternate-reverse;
+    }
+}
+
+.invitation-container {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+    position: relative;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.45);
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   4. FLOATING PETALS & PARTICLES
+   -------------------------------------------------------------------------- */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 80;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    background: radial-gradient(circle, rgba(245, 243, 238, 0.85) 0%, rgba(201, 168, 92, 0.4) 100%);
+    border-radius: 50% 0 50% 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation: fall linear infinite;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+@keyframes fall {
+    0% {
+        opacity: 0;
+        top: -5%;
+        transform: translateX(0) rotate(0deg) scale(0.6);
+    }
+    15% {
+        opacity: 0.7;
+    }
+    85% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0;
+        top: 105%;
+        transform: translateX(60px) rotate(360deg) scale(1);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. COVER / HERO SECTION (FULLSCREEN OPENING)
+   -------------------------------------------------------------------------- */
+.cover-screen {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    overflow: hidden;
+    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.2s ease;
+    will-change: transform, opacity;
+}
+
+.cover-screen.opened {
+    transform: translate(-50%, -100%);
+    opacity: 0.95;
+    pointer-events: none;
+}
+
+.cover-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    animation: coverZoom 20s ease-out forwards;
+    filter: brightness(0.92) contrast(1.05);
+}
+
+@keyframes coverZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(32, 39, 43, 0.5) 0%,
+        rgba(48, 56, 61, 0.65) 45%,
+        rgba(26, 32, 36, 0.92) 100%
+    );
+    animation: fadeIn 1.6s ease forwards;
+}
+
+.cover-floral-top {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 2;
+    animation: floatFloral 8s ease-in-out infinite alternate;
+}
+
+.cover-floral-bottom {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    width: 280px;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 2;
+    animation: floatFloral 9s ease-in-out infinite alternate-reverse;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 10;
+    padding: 2rem 1.5rem 2rem;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.cover-top {
+    padding-top: 1.5rem;
+    animation: fadeInDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tagline-sub {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tagline-sub::before, .tagline-sub::after {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+}
+.tagline-sub::after {
+    background: linear-gradient(to left, transparent, var(--gold));
+}
+
+.cover-couple-name {
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 9vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    color: var(--cream);
+    margin: 0.75rem 0;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    animation: scaleIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+}
+
+.cover-couple-name span {
+    font-family: var(--font-script);
+    font-size: 1.15em;
+    color: var(--gold-light);
+    display: inline-block;
+    margin: 0 0.15em;
+    font-weight: 400;
+}
+
+.cover-center {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 1.25rem;
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+}
+
+.guest-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 168, 92, 0.35);
+    border-radius: 18px;
+    padding: 1.1rem 1.35rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.guest-intro {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.25rem;
+}
+
+.guest-name-display {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    word-break: break-word;
+}
+
+.guest-note {
+    font-size: 0.7rem;
+    color: var(--cream-dark);
+    opacity: 0.85;
+    margin-top: 0.35rem;
+    font-style: italic;
+}
+
+.cover-bottom {
+    padding-bottom: 1rem;
+    width: 100%;
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s backwards;
+}
+
+.btn-open-invitation {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.95rem 1.8rem;
+    background: var(--gold-gradient);
+    color: #212629;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border-radius: var(--radius-pill);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: var(--shadow-gold), 0 0 20px rgba(201, 168, 92, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-open-invitation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 3s infinite;
+}
+
+.btn-open-invitation:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(201, 168, 92, 0.5);
+}
+
+.btn-open-invitation:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.btn-open-invitation svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.btn-open-invitation:hover svg {
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   6. SECTION ARCHITECTURES & LUXURY COMMON COMPONENTS
+   -------------------------------------------------------------------------- */
+.main-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    padding-bottom: 0;
+}
+
+.main-content.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --------------------------------------------------------------------------
+   HERO EDITORIAL SECTION (THE WEDDING OF — SAVE THE DATE SCREEN)
+   -------------------------------------------------------------------------- */
+.hero-editorial-section {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.25rem;
+    overflow: hidden;
+    background-color: #dce3e7;
+    background-image: url('assets/images/hero-landscape.svg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.hero-capsule-frame {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    min-height: 560px;
+    border-radius: min(44vw, 175px);
+    border: 2px solid #3c4950;
+    background: rgba(255, 255, 255, 0.48);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 16px 36px rgba(45, 59, 65, 0.12), inset 0 0 15px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    z-index: 10;
+    transition: transform var(--transition-smooth);
+}
+
+.hero-capsule-frame::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(60, 73, 80, 0.4);
+    border-radius: min(42vw, 168px);
+    pointer-events: none;
+}
+
+.hero-frame-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tagline {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #2b383e;
+    margin-bottom: 2.4rem;
+    opacity: 0;
+}
+
+.hero-couple-names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.2rem;
+    line-height: 1.15;
+}
+
+.hero-name-line {
+    font-family: 'Great Vibes', 'Alex Brush', cursive;
+    font-size: clamp(3.2rem, 11vw, 4.2rem);
+    font-weight: 400;
+    color: #1a252a;
+    letter-spacing: 0.02em;
+    display: block;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.7);
+    opacity: 0;
+}
+
+.hero-wedding-date {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #2e3c42;
+    margin-bottom: 0;
+    opacity: 0;
+}
+
+.btn-hero-save-date {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2.2rem;
+    background: #2e3b41;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(35, 46, 51, 0.25);
+    transition: all var(--transition-fast);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+}
+
+.btn-hero-save-date:hover {
+    background: #1a2327;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(35, 46, 51, 0.35);
+    color: #ffffff;
+}
+
+.btn-hero-save-date:active {
+    transform: translateY(0);
+}
+
+/* Trigger staggered animations after clicking 'Buka Undangan' */
+.hero-editorial-section.hero-animate .hero-tagline,
+.invitation-opened .hero-tagline {
+    animation: heroTaglineIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+
+.hero-editorial-section.hero-animate .hero-couple-names .hero-name-line:first-child,
+.invitation-opened .hero-couple-names .hero-name-line:first-child {
+    animation: heroNameIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
+
+.hero-editorial-section.hero-animate .hero-couple-names .hero-name-line:last-child,
+.invitation-opened .hero-couple-names .hero-name-line:last-child {
+    animation: heroNameIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
+}
+
+.hero-editorial-section.hero-animate .hero-wedding-date,
+.invitation-opened .hero-wedding-date {
+    animation: heroDateIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 1.25s forwards;
+}
+
+.hero-editorial-section.hero-animate .btn-hero-save-date,
+.invitation-opened .btn-hero-save-date {
+    animation: heroBtnIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 1.55s forwards;
+}
+
+/* Keyframe animations for Hero text elements */
+@keyframes heroTaglineIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-22px);
+        letter-spacing: 0.25em;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 0.1em;
+    }
+}
+
+@keyframes heroNameIn {
+    0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.88);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes heroDateIn {
+    0% {
+        opacity: 0;
+        transform: translateY(22px);
+        letter-spacing: 0.35em;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 0.22em;
+    }
+}
+
+@keyframes heroBtnIn {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.section {
+    position: relative;
+    padding: 4.5rem 1.5rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.section-dark {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.section-cream {
+    background-color: var(--cream);
+    color: var(--text-dark);
+}
+
+.section-white {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2.75rem;
+    position: relative;
+}
+
+.section-subtitle-script {
+    font-family: var(--font-script);
+    font-size: clamp(2rem, 8vw, 2.6rem);
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: -0.25rem;
+    display: block;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 6.5vw, 2.3rem);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    color: inherit;
+}
+
+.section-dark .section-title {
+    color: var(--cream);
+}
+
+.section-cream .section-title,
+.section-white .section-title {
+    color: var(--text-dark);
+}
+
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0.5rem auto 0;
+    width: 140px;
+}
+
+.section-divider::before, .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--gold);
+    opacity: 0.6;
+}
+
+.section-divider-icon {
+    color: var(--gold);
+    font-size: 0.75rem;
+    transform: rotate(45deg);
+}
+
+/* --------------------------------------------------------------------------
+   7. FLORAL DECORATION SYSTEM (CSS ANIMATED & NATURAL POSITIONS)
+   -------------------------------------------------------------------------- */
+.floral-ornament {
+    position: absolute;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.85;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+}
+
+.floral-top-left {
+    top: -15px;
+    left: -20px;
+    width: 130px;
+    transform-origin: top left;
+    animation: floatDecorSlow 9s ease-in-out infinite alternate;
+}
+
+.floral-top-right {
+    top: -15px;
+    right: -20px;
+    width: 130px;
+    transform-origin: top right;
+    animation: floatDecorSlow 11s ease-in-out infinite alternate-reverse;
+}
+
+.floral-bottom-left {
+    bottom: -20px;
+    left: -25px;
+    width: 140px;
+    transform-origin: bottom left;
+    animation: floatDecorSlow 10s ease-in-out infinite alternate;
+}
+
+.floral-bottom-right {
+    bottom: -20px;
+    right: -25px;
+    width: 140px;
+    transform-origin: bottom right;
+    animation: floatDecorSlow 12s ease-in-out infinite alternate-reverse;
+}
+
+.floral-center-top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    animation: floatFloral 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatDecorSlow {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+    50% {
+        transform: rotate(2deg) translate(3px, -4px);
+    }
+    100% {
+        transform: rotate(-2deg) translate(-2px, 3px);
+    }
+}
+
+@keyframes floatFloral {
+    0% {
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-6px) scale(1.02);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. HALAMAN 2 — INTRO ARCH PANEL
+   -------------------------------------------------------------------------- */
+.intro-arch-panel {
+    background: var(--cream);
+    color: var(--text-dark);
+    border-radius: var(--radius-arch);
+    padding: 4rem 1.75rem 3rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    text-align: center;
+    border: 1px solid rgba(201, 168, 92, 0.3);
+    margin-top: 2rem;
+}
+
+.intro-arch-panel::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px dashed rgba(201, 168, 92, 0.45);
+    border-radius: calc(240px - 6px) calc(240px - 6px) 18px 18px;
+    pointer-events: none;
+}
+
+.intro-badge {
+    display: inline-block;
+    font-family: var(--font-script);
+    font-size: 2.8rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.intro-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dark-bg);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.intro-bismillah {
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+    font-size: 1.4rem;
+    color: var(--gold-dark);
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+}
+
+.intro-text {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.intro-verse {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background: rgba(201, 168, 92, 0.08);
+    padding: 1.25rem;
+    border-radius: 16px;
+    border-left: 3px solid var(--gold);
+    line-height: 1.7;
+}
+
+.intro-verse-source {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   9. HALAMAN 3 — SAVE THE DATE & REALTIME COUNTDOWN
+   -------------------------------------------------------------------------- */
+.save-the-date-section {
+    background-color: var(--cream);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.save-the-date-section .section-title {
+    color: var(--text-dark);
+}
+
+.countdown-quote {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-muted);
+    max-width: 380px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto 2.5rem;
+}
+
+.countdown-box {
+    background: var(--white);
+    border: 1px solid rgba(201, 168, 92, 0.4);
+    border-radius: 16px;
+    padding: 1rem 0.5rem;
+    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.countdown-box:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+    box-shadow: 0 8px 24px rgba(201, 168, 92, 0.2);
+}
+
+.countdown-num {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--gold-dark);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.countdown-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+}
+
+.btn-add-calendar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem 1.6rem;
+    border: 1px solid var(--gold);
+    border-radius: var(--radius-pill);
+    color: var(--dark-bg);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.btn-add-calendar:hover {
+    background: var(--gold);
+    color: var(--white);
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   10. HALAMAN 4 — EVENT (AKAD & RESEPSI ARCH CARDS)
+   -------------------------------------------------------------------------- */
+.event-section {
+    background-color: var(--cream);
+    color: var(--text-dark);
+}
+
+.events-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: var(--white);
+    border: 1px solid rgba(201, 168, 92, 0.4);
+    border-radius: var(--radius-arch);
+    padding: 3.5rem 1.75rem 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.event-card > *:not(.card-ornament):not(.event-card-inner-border) {
+    position: relative;
+    z-index: 2;
+}
+
+.card-ornament {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 90px;
+    pointer-events: none;
+    z-index: 1;
+    object-fit: fill;
+    transition: transform 0.5s ease;
+}
+
+.card-ornament-left {
+    left: 0;
+}
+
+.card-ornament-right {
+    right: 0;
+}
+
+.event-card:hover .card-ornament-left {
+    transform: scale(1.03);
+}
+
+.event-card:hover .card-ornament-right {
+    transform: scale(1.03);
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(48, 52, 56, 0.12);
+}
+
+.event-card-inner-border {
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201, 168, 92, 0.25);
+    border-radius: calc(240px - 8px) calc(240px - 8px) 16px 16px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.event-icon-badge {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    background: rgba(201, 168, 92, 0.12);
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+}
+
+.event-icon-badge svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+}
+
+.event-type-title {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.event-datetime-box {
+    margin: 1.25rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(201, 168, 92, 0.2);
+    border-bottom: 1px solid rgba(201, 168, 92, 0.2);
+}
+
+.event-date {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--gold-dark);
+    margin-bottom: 0.35rem;
+}
+
+.event-time {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+}
+
+.event-venue-name {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+}
+
+.event-address {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+.btn-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem 1.6rem;
+    background: var(--dark-bg);
+    color: var(--cream);
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-location:hover {
+    background: var(--gold-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+/* --------------------------------------------------------------------------
+   11. COUPLE (THE GROOM & THE BRIDE) — NATURE EDITORIAL REDESIGN
+   -------------------------------------------------------------------------- */
+.couple-section {
+    background-color: #edf1f3;
+    color: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+/* Misty landscape background */
+.couple-bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.couple-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+}
+
+/* Section header */
+.couple-section-header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 3.5rem 2rem 1.5rem;
+}
+
+.couple-heading-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 7vw, 2.6rem);
+    font-weight: 400;
+    color: #2c3840;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+.couple-heading-desc {
+    font-size: 0.9rem;
+    color: #56676e;
+    line-height: 1.8;
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+/* Wrapper */
+.couple-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    z-index: 10;
+    padding: 1rem 1.5rem 5rem;
+}
+
+/* Individual profile card */
+.couple-card {
+    text-align: center;
+    width: 100%;
+    max-width: 340px;
+    padding: 2rem 1rem 2.5rem;
+    position: relative;
+}
+
+/* Oval photo frame — key design element */
+.couple-oval-frame {
+    width: 200px;
+    height: 265px;
+    margin: 0 auto 1.6rem;
+    border-radius: 50%;
+    border-radius: 110px 110px 110px 110px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #d6e8f0 0%, #c8dde8 100%);
+    box-shadow:
+        0 0 0 6px rgba(255, 255, 255, 0.75),
+        0 0 0 10px rgba(200, 221, 232, 0.45),
+        0 16px 40px rgba(60, 85, 100, 0.18);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.couple-oval-frame::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+}
+
+.couple-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+/* Name typography */
+.couple-fullname {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 6vw, 2.1rem);
+    font-weight: 400;
+    color: #2c3840;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+/* "Putra/Putri ... dari" label */
+.couple-sonof {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #4a5e68;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.3rem;
+}
+
+/* Parent names */
+.couple-parents {
+    font-size: 0.85rem;
+    color: #5a6e78;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+}
+
+/* Instagram circular button */
+.couple-ig-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(180, 200, 210, 0.6);
+    color: #4a6070;
+    box-shadow: 0 4px 14px rgba(60, 90, 110, 0.12);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.couple-ig-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.couple-ig-btn:hover {
+    background: #2e4e6b;
+    color: var(--white);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 78, 107, 0.3);
+}
+
+/* Ampersand divider */
+.couple-divider-ornament {
+    text-align: center;
+    padding: 0.5rem 0 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.couple-ampersand {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: #8a9ea8;
+    line-height: 1;
+    display: inline-block;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   12. HALAMAN 6 — LOVE STORY TIMELINE
+   -------------------------------------------------------------------------- */
+.love-story-section {
+    background: linear-gradient(180deg, var(--dark-bg-deep) 0%, var(--dark-bg) 100%);
+    color: var(--text-light);
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: linear-gradient(180deg, transparent 0%, var(--gold) 15%, var(--gold) 85%, transparent 100%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    width: 50%;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 1.75rem;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 1.75rem;
+    text-align: left;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--dark-bg);
+    box-shadow: 0 0 10px var(--gold-glow);
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -7px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -7px;
+}
+
+.timeline-year {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+}
+
+.timeline-title {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.35rem;
+}
+
+.timeline-desc {
+    font-size: 0.76rem;
+    color: var(--text-light-muted);
+    line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   13. HALAMAN 7 — CERITA / PERNIKAHAN (EDITORIAL QUOTE)
+   -------------------------------------------------------------------------- */
+.story-editorial-section {
+    background-color: var(--cream-light);
+    color: var(--text-dark);
+}
+
+.story-card-editorial {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 3rem 1.75rem;
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid rgba(201, 168, 92, 0.3);
+    box-shadow: var(--shadow-subtle);
+    position: relative;
+    text-align: center;
+}
+
+.story-quote-mark {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 0.6;
+    margin-bottom: 1rem;
+    opacity: 0.45;
+}
+
+.story-paragraph {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.story-signature {
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    color: var(--gold-dark);
+    line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   14. HALAMAN 8 — GALERI FOTO (EDITORIAL GRID & LIGHTBOX)
+   -------------------------------------------------------------------------- */
+.gallery-section {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    background-color: var(--dark-surface);
+    border: 1px solid rgba(201, 168, 92, 0.2);
+    transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    border-color: var(--gold);
+}
+
+.gallery-item.portrait {
+    grid-row: span 2;
+    aspect-ratio: 9/16;
+}
+
+.gallery-item.landscape {
+    grid-column: span 2;
+    aspect-ratio: 16/10;
+}
+
+.gallery-item.square {
+    aspect-ratio: 1/1;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.06);
+}
+
+.gallery-overlay-icon {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay-icon {
+    opacity: 1;
+}
+
+.gallery-overlay-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--gold-light);
+    stroke-width: 1.5;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(15, 18, 20, 0.95);
+    backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    padding: 1rem;
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    border: 1px solid rgba(201, 168, 92, 0.4);
+    object-fit: contain;
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox-btn {
+    position: absolute;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(201, 168, 92, 0.4);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 1010;
+}
+
+.lightbox-btn:hover {
+    background: var(--gold);
+    color: var(--dark-bg);
+    transform: scale(1.1);
+}
+
+.lightbox-close {
+    top: -50px;
+    right: 0;
+}
+
+.lightbox-prev {
+    left: -20px;
+}
+
+.lightbox-next {
+    right: -20px;
+}
+
+@media (max-width: 600px) {
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+    .lightbox-close { top: 15px; right: 15px; }
+}
+
+/* --------------------------------------------------------------------------
+   15. HALAMAN 9 — WEDDING GIFT (CARD REKENING DIGITAL)
+   -------------------------------------------------------------------------- */
+.wedding-gift-section {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.bank-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto 2.5rem;
+}
+
+.bank-card {
+    background: linear-gradient(135deg, #F8F9FA 0%, #EDE9DE 100%);
+    border: 1px solid rgba(201, 168, 92, 0.45);
+    border-radius: 20px;
+    padding: 1.6rem 1.5rem;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.bank-card:hover {
+    transform: translateY(-3px);
+}
+
+.bank-card-chip {
+    width: 38px;
+    height: 28px;
+    background: linear-gradient(135deg, #D6BA7A 0%, #A9873E 100%);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.4);
+}
+
+.bank-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.bank-card-logo-text {
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: var(--dark-bg);
+}
+
+.bank-card-number {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.bank-card-holder {
+    font-size: 0.82rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.btn-copy-account {
+    margin-top: 1.25rem;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    background: var(--dark-bg);
+    color: var(--cream);
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-copy-account:hover {
+    background: var(--gold-dark);
+    color: var(--white);
+}
+
+.btn-copy-account svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   16. HALAMAN 10 — KIRIM HADIAH (PHYSICAL GIFT CARD)
+   -------------------------------------------------------------------------- */
+.physical-gift-card {
+    background: var(--cream-light);
+    border: 1px dashed rgba(201, 168, 92, 0.6);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: var(--shadow-subtle);
+}
+
+.gift-box-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    display: inline-block;
+    animation: bounceSlow 3s ease-in-out infinite;
+}
+
+@keyframes bounceSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.gift-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.gift-detail-item {
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.gift-detail-item strong {
+    color: var(--text-dark);
+    display: block;
+    font-size: 0.95rem;
+}
+
+.btn-copy-address {
+    margin-top: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.65rem 1.4rem;
+    background: var(--gold-gradient);
+    color: #212629;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(201, 168, 92, 0.3);
+}
+
+.btn-copy-address:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+/* --------------------------------------------------------------------------
+   17. HALAMAN 11 — RSVP FORM
+   -------------------------------------------------------------------------- */
+.rsvp-section {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.rsvp-form-container {
+    max-width: 420px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(201, 168, 92, 0.35);
+    border-radius: 24px;
+    padding: 2.25rem 1.75rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-soft);
+}
+
+.form-group {
+    margin-bottom: 1.4rem;
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(201, 168, 92, 0.25);
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 12px rgba(201, 168, 92, 0.25);
+}
+
+.form-control::placeholder {
+    color: rgba(245, 243, 238, 0.4);
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9A85C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    cursor: pointer;
+}
+
+select.form-control option {
+    background-color: var(--dark-bg-deep);
+    color: var(--text-light);
+}
+
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.btn-submit-rsvp {
+    width: 100%;
+    padding: 0.95rem 1.5rem;
+    background: var(--gold-gradient);
+    color: #212629;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-submit-rsvp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(201, 168, 92, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   18. HALAMAN 12 — WISHES FEED
+   -------------------------------------------------------------------------- */
+.wishes-section {
+    background-color: var(--cream);
+    color: var(--text-dark);
+}
+
+.wishes-container {
+    max-width: 420px;
+    margin: 0 auto;
+    max-height: 480px;
+    overflow-y: auto;
+    padding-right: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.wishes-container::-webkit-scrollbar {
+    width: 4px;
+}
+.wishes-container::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+}
+
+.wish-card {
+    background: var(--white);
+    border: 1px solid rgba(201, 168, 92, 0.3);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-subtle);
+    animation: fadeIn 0.5s ease;
+}
+
+.wish-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.wish-author {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.wish-badge {
+    font-size: 0.85rem;
+    font-weight: 700;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.wish-badge.attending {
+    background: rgba(46, 125, 50, 0.12);
+    color: #2E7D32;
+    border: 1px solid rgba(46, 125, 50, 0.25);
+}
+
+.wish-badge.not-attending {
+    background: rgba(198, 40, 40, 0.1);
+    color: #C62828;
+    border: 1px solid rgba(198, 40, 40, 0.2);
+}
+
+.wish-badge.uncertain {
+    background: rgba(201, 168, 92, 0.15);
+    color: var(--gold-dark);
+    border: 1px solid rgba(201, 168, 92, 0.3);
+}
+
+.wish-message {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0.4rem;
+}
+
+.wish-time {
+    font-size: 0.68rem;
+    color: #9AA4AA;
+    text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   19. CLOSING SECTION
+   -------------------------------------------------------------------------- */
+.closing-section {
+    position: relative;
+    padding: 4.5rem 1.5rem 5.5rem !important;
+    text-align: center;
+    background: #edf1f3;
+    overflow: hidden;
+}
+
+.closing-bg-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.closing-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+.closing-content {
+    position: relative;
+    z-index: 2;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.closing-oval-frame {
+    width: 175px;
+    height: 250px;
+    border-radius: 95px;
+    border: 3.5px solid var(--white);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(35, 50, 60, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: #e4ecf0;
+    margin-bottom: 2.2rem;
+    flex-shrink: 0;
+}
+
+.closing-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+}
+
+.closing-text {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    color: #1e2b32;
+    line-height: 1.85;
+    max-width: 350px;
+    margin: 0 auto 2rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.closing-salutation {
+    font-size: 0.85rem;
+    color: #384952;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.6rem;
+}
+
+.closing-couple-name {
+    font-family: var(--font-script);
+    font-size: 3.1rem;
+    color: #b8974a;
+    line-height: 1.15;
+    font-style: italic;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
+}
+
+/* --------------------------------------------------------------------------
+   20. FOOTER SECTION
+   -------------------------------------------------------------------------- */
+.footer-section {
+    background-color: var(--cream);
+    color: var(--text-dark);
+    text-align: center;
+    padding: 1.5rem 1.5rem 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo {
+    width: 54px;
+    height: auto;
+    max-height: 54px;
+    object-fit: contain;
+    margin-bottom: 0.75rem;
+    opacity: 0.95;
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.4));
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.footer-logo:hover {
+    transform: scale(1.06);
+    opacity: 1;
+}
+
+.footer-credit {
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    color: var(--gold-dark);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   20. FLOATING MUSIC PLAYER BUTTON
+   -------------------------------------------------------------------------- */
+.music-toggle-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #2b383e;
+    color: #e0c897;
+    border: 2px solid #caa256;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 14px rgba(202, 162, 86, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 95;
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.music-toggle-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.music-toggle-btn:hover {
+    transform: scale(1.08);
+}
+
+.music-toggle-btn.playing svg {
+    animation: spinDisc 4s linear infinite;
+}
+
+@keyframes spinDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.music-toggle-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   21. TOAST NOTIFICATION
+   -------------------------------------------------------------------------- */
+.toast-container {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60px);
+    z-index: 1100;
+    background: var(--white);
+    color: var(--text-dark);
+    border: 1px solid var(--gold);
+    border-radius: var(--radius-pill);
+    padding: 0.75rem 1.6rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.toast-container.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-container svg {
+    width: 18px;
+    height: 18px;
+    fill: #2E7D32;
+}
+
+/* --------------------------------------------------------------------------
+   23. SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
+   -------------------------------------------------------------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active,
+.reveal-scale.active {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Stagger Delay Utilities */
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.45s; }
+.delay-4 { transition-delay: 0.6s; }
+
+/* --------------------------------------------------------------------------
+   24. KEYFRAME ANIMATION LIBRARY
+   -------------------------------------------------------------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}
+
+/* --------------------------------------------------------------------------
+   25. RESPONSIVE OPTIMIZATIONS
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .card-ornament {
+        width: 75px;
+    }
+}
+
+@media (max-width: 360px) {
+    .cover-couple-name {
+        font-size: 2.2rem;
+    }
+    .countdown-grid {
+        gap: 6px;
+    }
+    .countdown-num {
+        font-size: 1.4rem;
+    }
+    .intro-arch-panel,
+    .event-card {
+        padding: 3rem 1.25rem 2rem;
+    }
+    .card-ornament {
+        width: 65px;
+    }
+}

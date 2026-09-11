@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 800" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Background Gradient (Sky to Mist) -->
+    <linearGradient id="skyMist" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dce3e7" />
+      <stop offset="35%" stop-color="#ecf0f2" />
+      <stop offset="65%" stop-color="#f5f7f8" />
+      <stop offset="100%" stop-color="#d7e0e4" />
+    </linearGradient>
+
+    <!-- Mountain Gradients -->
+    <linearGradient id="mountFar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b8c6ce" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#dce3e7" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="mountMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9eb0bb" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#e2e8ec" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="mountNear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7d919d" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#cad5db" stop-opacity="0.3" />
+    </linearGradient>
+
+    <!-- Pine Forest Mist -->
+    <linearGradient id="forestGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4e626c" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#697e88" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#2a3940" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Golden Leaf Gradient -->
+    <linearGradient id="goldLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d6b97b" />
+      <stop offset="50%" stop-color="#bda061" />
+      <stop offset="100%" stop-color="#8a733f" />
+    </linearGradient>
+
+    <!-- Flower Petal Gradient -->
+    <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="80%" stop-color="#f2ede4" />
+      <stop offset="100%" stop-color="#dfd5c5" />
+    </linearGradient>
+    <radialGradient id="flowerCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8cf8d" />
+      <stop offset="80%" stop-color="#caa256" />
+      <stop offset="100%" stop-color="#96722d" />
+    </radialGradient>
+
+    <!-- Soft Mist Filter -->
+    <filter id="mistBlur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <!-- Base Sky -->
+  <rect width="450" height="800" fill="url(#skyMist)" />
+
+  <!-- Textured Waves (Japanese-style soft ripples at top) -->
+  <g opacity="0.18" stroke="#485b66" stroke-width="0.8" fill="none">
+    <path d="M-20,40 Q40,10 100,40 T220,40 T340,40 T460,40" />
+    <path d="M-20,55 Q40,25 100,55 T220,55 T340,55 T460,55" />
+    <path d="M-20,70 Q40,40 100,70 T220,70 T340,70 T460,70" />
+    <path d="M-20,85 Q40,55 100,85 T220,85 T340,85 T460,85" />
+    <path d="M-20,100 Q40,70 100,100 T220,100 T340,100 T460,100" />
+  </g>
+
+  <!-- Far Mountains -->
+  <path d="M-20,380 Q90,200 230,280 T470,220 L470,600 L-20,600 Z" fill="url(#mountFar)" filter="url(#mistBlur)" />
+  <path d="M-20,420 Q120,290 280,360 T480,290 L480,650 L-20,650 Z" fill="url(#mountMid)" opacity="0.85" />
+  <path d="M-20,480 Q160,380 320,440 T480,390 L480,720 L-20,720 Z" fill="url(#mountNear)" opacity="0.9" />
+
+  <!-- Pine Tree Silhouettes in Mist (Background / Midground) -->
+  <g fill="#5a6e78" opacity="0.45">
+    <!-- Left Mid Trees -->
+    <polygon points="30,480 20,520 40,520" />
+    <polygon points="30,500 15,550 45,550" />
+    <polygon points="60,490 50,530 70,530" />
+    <polygon points="60,510 45,560 75,560" />
+    <polygon points="100,520 90,560 110,560" />
+    <polygon points="140,535 130,575 150,575" />
+    
+    <!-- Right Mid Trees -->
+    <polygon points="390,470 380,510 400,510" />
+    <polygon points="390,490 375,540 405,540" />
+    <polygon points="350,510 340,550 360,550" />
+    <polygon points="310,530 300,570 320,570" />
+  </g>
+
+  <!-- Foreground Pine Forest Mist -->
+  <g fill="url(#forestGrad)" opacity="0.8">
+    <polygon points="20,560 8,610 32,610" />
+    <polygon points="20,580 2,640 38,640" />
+    <polygon points="50,570 38,620 62,620" />
+    <polygon points="50,590 32,650 68,650" />
+    <polygon points="80,590 68,640 92,640" />
+    <polygon points="120,610 110,660 130,660" />
+    <polygon points="160,625 150,670 170,670" />
+    <polygon points="200,640 190,685 210,685" />
+    <polygon points="240,645 230,690 250,690" />
+    <polygon points="280,635 270,680 290,680" />
+    <polygon points="330,615 320,665 340,665" />
+    <polygon points="370,590 358,640 382,640" />
+    <polygon points="370,610 352,670 388,670" />
+    <polygon points="410,575 398,625 422,625" />
+    <polygon points="410,595 392,655 428,655" />
+  </g>
+
+  <!-- Deer / Stag Silhouette (Lower Left in mist) -->
+  <g fill="#374850" opacity="0.85" transform="translate(45, 590) scale(0.65)">
+    <!-- Antlers -->
+    <path d="M48,15 Q40,-5 30,-12 Q33,-2 42,8 M42,-2 Q48,-15 60,-22 Q52,-10 46,2 M45,-8 Q35,-20 28,-25 Q32,-15 40,-4 M52,15 Q60,-5 70,-12 Q67,-2 58,8 M58,-2 Q52,-15 40,-22 Q48,-10 54,2" stroke="#374850" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <!-- Head & Ears -->
+    <ellipse cx="50" cy="22" rx="7" ry="12" transform="rotate(-15 50 22)" />
+    <path d="M42,16 Q30,12 36,22 Z M58,16 Q70,12 64,22 Z" />
+    <!-- Neck -->
+    <path d="M44,28 Q40,48 35,62 L55,62 Q56,48 54,28 Z" />
+    <!-- Body -->
+    <path d="M35,60 Q20,70 10,95 Q15,115 45,115 Q75,115 85,95 Q80,75 55,60 Z" />
+    <!-- Legs -->
+    <path d="M22,110 L18,175 L24,175 L30,115 Z" />
+    <path d="M34,110 L30,170 L35,170 L42,115 Z" />
+    <path d="M65,110 L60,175 L66,175 L73,115 Z" />
+    <path d="M78,110 L82,170 L87,170 L86,115 Z" />
+  </g>
+
+  <!-- Soft Mist Layers at bottom -->
+  <ellipse cx="225" cy="730" rx="260" ry="90" fill="#f0f4f6" opacity="0.6" filter="url(#mistBlur)" />
+
+  <!-- Botanical Foliage & Golden Leaves (Bottom & Side Borders) -->
+  <!-- Left Bush Foliage -->
+  <g transform="translate(-10, 640)">
+    <!-- Dark Teal / Slate Leaves -->
+    <path d="M20,60 Q50,10 90,40 Q50,70 20,60 Z" fill="#2d3d44" />
+    <path d="M10,80 Q40,30 80,65 Q40,95 10,80 Z" fill="#3a4d56" />
+    <path d="M-5,110 Q35,70 75,100 Q35,130 -5,110 Z" fill="#202c31" />
+    
+    <!-- Golden Olive Leaves -->
+    <path d="M30,30 Q70,0 110,25 Q70,55 30,30 Z" fill="url(#goldLeaf)" />
+    <path d="M5,45 Q45,20 85,45 Q45,70 5,45 Z" fill="url(#goldLeaf)" opacity="0.9" />
+    <path d="M40,90 Q85,60 120,85 Q80,115 40,90 Z" fill="url(#goldLeaf)" />
+  </g>
+
+  <!-- Right Bush Foliage & Pampas Grass -->
+  <g transform="translate(340, 620)">
+    <!-- Dark Slate Leaves -->
+    <path d="M80,80 Q40,30 0,65 Q40,95 80,80 Z" fill="#2d3d44" />
+    <path d="M90,110 Q50,70 10,100 Q50,130 90,110 Z" fill="#202c31" />
+    <path d="M60,40 Q20,0 -20,30 Q20,60 60,40 Z" fill="#3a4d56" />
+    
+    <!-- Golden Leaves -->
+    <path d="M70,25 Q30,-5 -10,20 Q30,45 70,25 Z" fill="url(#goldLeaf)" />
+    <path d="M50,85 Q5,55 -30,80 Q10,110 50,85 Z" fill="url(#goldLeaf)" />
+    
+    <!-- Pampas Grass Plumes -->
+    <g opacity="0.85" fill="#cfbe98">
+      <ellipse cx="60" cy="-20" rx="15" ry="40" transform="rotate(25 60 -20)" />
+      <ellipse cx="75" cy="10" rx="12" ry="35" transform="rotate(35 75 10)" />
+      <ellipse cx="85" cy="40" rx="10" ry="30" transform="rotate(45 85 40)" />
+    </g>
+  </g>
+
+  <!-- Fluffy Pampas / Bush on Upper Left / Right Corners -->
+  <g opacity="0.65" fill="#cfbe98">
+    <!-- Upper Left -->
+    <ellipse cx="20" cy="180" rx="25" ry="50" transform="rotate(-20 20 180)" />
+    <ellipse cx="0" cy="240" rx="20" ry="45" transform="rotate(-10 0 240)" />
+    <!-- Upper Right -->
+    <ellipse cx="430" cy="220" rx="25" ry="55" transform="rotate(20 430 220)" />
+    <ellipse cx="445" cy="290" rx="20" ry="45" transform="rotate(15 445 290)" />
+    <ellipse cx="435" cy="440" rx="25" ry="50" transform="rotate(15 435 440)" />
+  </g>
+
+  <!-- Detailed White Blossom Flowers (Lower Border & Sides) -->
+  <!-- Flower Helper Function represented in direct SVG nodes -->
+  <!-- Flower 1: Bottom Center-Left -->
+  <g transform="translate(170, 725) scale(0.75)">
+    <circle cx="0" cy="-18" r="14" fill="url(#petalGrad)" />
+    <circle cx="17" cy="-6" r="14" fill="url(#petalGrad)" />
+    <circle cx="11" cy="15" r="14" fill="url(#petalGrad)" />
+    <circle cx="-11" cy="15" r="14" fill="url(#petalGrad)" />
+    <circle cx="-17" cy="-6" r="14" fill="url(#petalGrad)" />
+    <circle cx="0" cy="0" r="7" fill="url(#flowerCenter)" />
+  </g>
+
+  <!-- Flower 2: Bottom Center-Right -->
+  <g transform="translate(260, 715) scale(0.85)">
+    <circle cx="0" cy="-20" r="15" fill="url(#petalGrad)" />
+    <circle cx="19" cy="-6" r="15" fill="url(#petalGrad)" />
+    <circle cx="12" cy="16" r="15" fill="url(#petalGrad)" />
+    <circle cx="-12" cy="16" r="15" fill="url(#petalGrad)" />
+    <circle cx="-19" cy="-6" r="15" fill="url(#petalGrad)" />
+    <circle cx="0" cy="0" r="8" fill="url(#flowerCenter)" />
+  </g>
+
+  <!-- Flower 3: Bottom Far Right -->
+  <g transform="translate(385, 740) scale(1)">
+    <circle cx="0" cy="-22" r="16" fill="url(#petalGrad)" />
+    <circle cx="21" cy="-7" r="16" fill="url(#petalGrad)" />
+    <circle cx="13" cy="18" r="16" fill="url(#petalGrad)" />
+    <circle cx="-13" cy="18" r="16" fill="url(#petalGrad)" />
+    <circle cx="-21" cy="-7" r="16" fill="url(#petalGrad)" />
+    <circle cx="0" cy="0" r="9" fill="url(#flowerCenter)" />
+  </g>
+
+  <!-- Flower 4: Bottom Far Left -->
+  <g transform="translate(60, 755) scale(0.9)">
+    <circle cx="0" cy="-20" r="15" fill="url(#petalGrad)" />
+    <circle cx="19" cy="-6" r="15" fill="url(#petalGrad)" />
+    <circle cx="12" cy="16" r="15" fill="url(#petalGrad)" />
+    <circle cx="-12" cy="16" r="15" fill="url(#petalGrad)" />
+    <circle cx="-19" cy="-6" r="15" fill="url(#petalGrad)" />
+    <circle cx="0" cy="0" r="8" fill="url(#flowerCenter)" />
+  </g>
+
+  <!-- Flower 5: Mid-Right Border -->
+  <g transform="translate(425, 500) scale(0.95)">
+    <circle cx="0" cy="-20" r="15" fill="url(#petalGrad)" />
+    <circle cx="19" cy="-6" r="15" fill="url(#petalGrad)" />
+    <circle cx="12" cy="16" r="15" fill="url(#petalGrad)" />
+    <circle cx="-12" cy="16" r="15" fill="url(#petalGrad)" />
+    <circle cx="-19" cy="-6" r="15" fill="url(#petalGrad)" />
+    <circle cx="0" cy="0" r="8" fill="url(#flowerCenter)" />
+  </g>
+
+  <!-- Flower 6: Mid-Left Border -->
+  <g transform="translate(25, 520) scale(0.85)">
+    <circle cx="0" cy="-18" r="14" fill="url(#petalGrad)" />
+    <circle cx="17" cy="-6" r="14" fill="url(#petalGrad)" />
+    <circle cx="11" cy="15" r="14" fill="url(#petalGrad)" />
+    <circle cx="-11" cy="15" r="14" fill="url(#petalGrad)" />
+    <circle cx="-17" cy="-6" r="14" fill="url(#petalGrad)" />
+    <circle cx="0" cy="0" r="7" fill="url(#flowerCenter)" />
+  </g>
+
+  <!-- Flower 7: Upper-Left Border -->
+  <g transform="translate(15, 410) scale(0.75)">
+    <circle cx="0" cy="-18" r="14" fill="url(#petalGrad)" />
+    <circle cx="17" cy="-6" r="14" fill="url(#petalGrad)" />
+    <circle cx="11" cy="15" r="14" fill="url(#petalGrad)" />
+    <circle cx="-11" cy="15" r="14" fill="url(#petalGrad)" />
+    <circle cx="-17" cy="-6" r="14" fill="url(#petalGrad)" />
+    <circle cx="0" cy="0" r="7" fill="url(#flowerCenter)" />
+  </g>
+</svg>

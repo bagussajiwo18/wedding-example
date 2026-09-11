@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 800" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <!-- Deep Vintage Woodland Gradients -->
+    <linearGradient id="canopyBaseL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#192a2d" />
+      <stop offset="35%" stop-color="#2a4549" />
+      <stop offset="70%" stop-color="#345459" />
+      <stop offset="100%" stop-color="#142124" />
+    </linearGradient>
+
+    <radialGradient id="foliagePuffL" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#5a8086" />
+      <stop offset="45%" stop-color="#3b5d62" />
+      <stop offset="85%" stop-color="#223a3e" />
+      <stop offset="100%" stop-color="#122022" />
+    </radialGradient>
+
+    <!-- Stipple / Engraving Pattern -->
+    <pattern id="stippleWood" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.2" fill="#8cb3b8" opacity="0.35" />
+      <circle cx="14" cy="12" r="1.4" fill="#a4c6cb" opacity="0.3" />
+      <circle cx="8" cy="16" r="1" fill="#71989d" opacity="0.4" />
+      <path d="M2,8 Q8,5 12,8" stroke="#162527" stroke-width="0.75" fill="none" opacity="0.6" />
+      <path d="M10,15 Q15,12 18,15" stroke="#162527" stroke-width="0.75" fill="none" opacity="0.6" />
+    </pattern>
+  </defs>
+
+  <!-- Solid Deep Base -->
+  <rect width="240" height="800" fill="url(#canopyBaseL)" />
+
+  <!-- Dense Textured Bush & Leaf Puff Layers -->
+  <g stroke="#152426" stroke-width="0.8">
+    <!-- Top Layer -->
+    <ellipse cx="60" cy="90" rx="95" ry="80" fill="url(#foliagePuffL)" />
+    <ellipse cx="170" cy="70" rx="100" ry="85" fill="url(#foliagePuffL)" />
+    <ellipse cx="230" cy="140" rx="85" ry="90" fill="url(#foliagePuffL)" />
+    <ellipse cx="110" cy="180" rx="90" ry="80" fill="url(#foliagePuffL)" />
+
+    <!-- Mid-Upper Layer -->
+    <ellipse cx="40" cy="260" rx="90" ry="95" fill="url(#foliagePuffL)" />
+    <ellipse cx="160" cy="270" rx="105" ry="95" fill="url(#foliagePuffL)" />
+    <ellipse cx="235" cy="330" rx="80" ry="90" fill="url(#foliagePuffL)" />
+    <ellipse cx="90" cy="370" rx="100" ry="90" fill="url(#foliagePuffL)" />
+
+    <!-- Mid-Lower Layer -->
+    <ellipse cx="190" cy="430" rx="95" ry="100" fill="url(#foliagePuffL)" />
+    <ellipse cx="60" cy="480" rx="95" ry="95" fill="url(#foliagePuffL)" />
+    <ellipse cx="170" cy="530" rx="110" ry="100" fill="url(#foliagePuffL)" />
+    <ellipse cx="235" cy="590" rx="80" ry="90" fill="url(#foliagePuffL)" />
+
+    <!-- Lower Layer -->
+    <ellipse cx="80" cy="620" rx="100" ry="105" fill="url(#foliagePuffL)" />
+    <ellipse cx="180" cy="690" rx="105" ry="105" fill="url(#foliagePuffL)" />
+    <ellipse cx="50" cy="740" rx="90" ry="95" fill="url(#foliagePuffL)" />
+    <ellipse cx="210" cy="780" rx="85" ry="85" fill="url(#foliagePuffL)" />
+  </g>
+
+  <!-- Overlay Texture Stipple for Woodcut Engraving Look -->
+  <rect width="240" height="800" fill="url(#stippleWood)" />
+
+  <!-- Detailed Branching Network -->
+  <g fill="none" stroke="#121d1f" stroke-linecap="round">
+    <!-- Main Tree Trunk Along Left Boundary -->
+    <path d="M15,800 Q35,620 25,460 Q15,310 40,160 Q60,60 25,0" stroke-width="14" />
+    <path d="M25,650 Q75,560 145,590" stroke-width="7" />
+    <path d="M25,500 Q85,420 165,450" stroke-width="8" />
+    <path d="M20,350 Q95,270 175,300" stroke-width="9" />
+    <path d="M35,210 Q110,130 190,160" stroke-width="7" />
+    <path d="M40,100 Q105,40 170,60" stroke-width="6" />
+
+    <!-- Branchlet Splinters -->
+    <path d="M110,570 Q145,530 195,550" stroke-width="4" />
+    <path d="M125,435 Q165,395 210,415" stroke-width="4.5" />
+    <path d="M130,285 Q175,245 220,265" stroke-width="5" />
+    <path d="M145,145 Q185,110 225,125" stroke-width="4" />
+  </g>
+
+  <!-- Fine Engraved White/Cyan Leaf Accents -->
+  <g fill="#bad4d8" opacity="0.6">
+    <circle cx="160" cy="65" r="2.5" />
+    <circle cx="210" cy="130" r="3" />
+    <circle cx="150" cy="250" r="2.5" />
+    <circle cx="205" cy="315" r="3" />
+    <circle cx="165" cy="410" r="3.2" />
+    <circle cx="220" cy="510" r="2.8" />
+    <circle cx="145" cy="610" r="3.5" />
+    <circle cx="195" cy="680" r="3" />
+  </g>
+</svg>

@@ -1,0 +1,421 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 900" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="clSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dde4e7" />
+      <stop offset="35%" stop-color="#edf1f3" />
+      <stop offset="70%" stop-color="#f6f8f9" />
+      <stop offset="100%" stop-color="#d5dfe4" />
+    </linearGradient>
+
+    <!-- Mountain Gradients -->
+    <linearGradient id="clMountFar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b6c5cc" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#dde4e7" stop-opacity="0.08" />
+    </linearGradient>
+    <linearGradient id="clMountMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9cb0bb" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#e0e7ec" stop-opacity="0.15" />
+    </linearGradient>
+    <linearGradient id="clMountNear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7a8f9b" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#c8d4da" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- True Botanical Leaf Gradients -->
+    <linearGradient id="leafTealDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d585e" />
+      <stop offset="100%" stop-color="#1b2d31" />
+    </linearGradient>
+    <linearGradient id="leafTealMid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#55777e" />
+      <stop offset="100%" stop-color="#2a4247" />
+    </linearGradient>
+    <linearGradient id="leafSage" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8ba89a" />
+      <stop offset="100%" stop-color="#4f6e60" />
+    </linearGradient>
+    <linearGradient id="leafGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8cf96" />
+      <stop offset="50%" stop-color="#caa256" />
+      <stop offset="100%" stop-color="#876522" />
+    </linearGradient>
+
+    <!-- Flower Petal Gradients -->
+    <linearGradient id="clPetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="75%" stop-color="#f4efe7" />
+      <stop offset="100%" stop-color="#e2d8c8" />
+    </linearGradient>
+    <linearGradient id="clPetalPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="65%" stop-color="#f8ece8" />
+      <stop offset="100%" stop-color="#e8d2cb" />
+    </linearGradient>
+    <radialGradient id="clCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ebd290" />
+      <stop offset="75%" stop-color="#c8a054" />
+      <stop offset="100%" stop-color="#946f2c" />
+    </radialGradient>
+
+    <!-- Mist Blur Filter -->
+    <filter id="clMist" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="4.5" />
+    </filter>
+  </defs>
+
+  <!-- Base Sky -->
+  <rect width="450" height="900" fill="url(#clSky)" />
+
+  <!-- Top Japanese Wave Texture Lines -->
+  <g opacity="0.16" stroke="#485b66" stroke-width="0.8" fill="none">
+    <path d="M-20,35 Q40,10 100,35 T220,35 T340,35 T460,35" />
+    <path d="M-20,50 Q40,25 100,50 T220,50 T340,50 T460,50" />
+    <path d="M-20,65 Q40,40 100,65 T220,65 T340,65 T460,65" />
+    <path d="M-20,80 Q40,55 100,80 T220,80 T340,80 T460,80" />
+  </g>
+
+  <!-- TOP-RIGHT GOLDEN TREE BRANCH (Pushed outward to top-right corner) -->
+  <g transform="translate(330, -10) scale(1.05)" opacity="0.82">
+    <path d="M95,120 Q85,70 70,30 Q60,10 40,0" stroke="#755922" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M70,30 Q45,20 20,25" stroke="#755922" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M80,60 Q55,50 35,62" stroke="#755922" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M85,85 Q65,80 45,95" stroke="#755922" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path d="M70,30 Q90,15 115,10" stroke="#755922" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <path d="M40,0 Q30,-15 15,-10 Q20,5 40,0 Z" fill="url(#leafGold)"/>
+    <path d="M20,25 Q5,15 -5,22 Q5,35 20,25 Z" fill="url(#leafGold)"/>
+    <path d="M35,62 Q18,52 10,65 Q22,75 35,62 Z" fill="url(#leafGold)"/>
+    <path d="M45,95 Q28,88 20,102 Q35,110 45,95 Z" fill="url(#leafGold)"/>
+    <path d="M115,10 Q130,-2 142,8 Q130,20 115,10 Z" fill="url(#leafGold)"/>
+    <path d="M55,15 Q40,5 30,16 Q45,26 55,15 Z" fill="url(#leafGold)"/>
+    <path d="M60,42 Q45,32 38,45 Q50,54 60,42 Z" fill="url(#leafGold)"/>
+    <path d="M65,72 Q50,62 42,75 Q55,84 65,72 Z" fill="url(#leafGold)"/>
+  </g>
+
+  <!-- TOP-LEFT GOLDEN TREE BRANCH (Pushed outward to top-left corner) -->
+  <g transform="translate(-40, -10) scale(1.05)" opacity="0.82">
+    <path d="M15,120 Q25,70 40,30 Q50,10 70,0" stroke="#755922" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M40,30 Q65,20 90,25" stroke="#755922" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M30,60 Q55,50 75,62" stroke="#755922" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M25,85 Q45,80 65,95" stroke="#755922" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path d="M40,30 Q20,15 -5,10" stroke="#755922" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <path d="M70,0 Q80,-15 95,-10 Q90,5 70,0 Z" fill="url(#leafGold)"/>
+    <path d="M90,25 Q105,15 115,22 Q105,35 90,25 Z" fill="url(#leafGold)"/>
+    <path d="M75,62 Q92,52 100,65 Q88,75 75,62 Z" fill="url(#leafGold)"/>
+    <path d="M65,95 Q82,88 90,102 Q75,110 65,95 Z" fill="url(#leafGold)"/>
+    <path d="M-5,10 Q-20,-2 -32,8 Q-20,20 -5,10 Z" fill="url(#leafGold)"/>
+    <path d="M55,15 Q70,5 80,16 Q65,26 55,15 Z" fill="url(#leafGold)"/>
+    <path d="M50,42 Q65,32 72,45 Q60,54 50,42 Z" fill="url(#leafGold)"/>
+  </g>
+
+  <!-- Soft Mountains in Background -->
+  <path d="M-20,440 Q90,260 230,340 T470,280 L470,680 L-20,680 Z" fill="url(#clMountFar)" filter="url(#clMist)" />
+  <path d="M-20,480 Q120,350 280,420 T480,350 L480,720 L-20,720 Z" fill="url(#clMountMid)" opacity="0.8" />
+  <path d="M-20,530 Q160,430 320,490 T480,440 L480,780 L-20,780 Z" fill="url(#clMountNear)" opacity="0.8" />
+
+  <!-- Soft Mist Glow Behind Central Text Area (Membuat tulisan sangat jelas & bersih) -->
+  <ellipse cx="225" cy="570" rx="190" ry="160" fill="#edf1f3" opacity="0.75" filter="url(#clMist)" />
+
+  <!-- DEER / STAG SILHOUETTE (Shifted left and lower) -->
+  <g fill="#2d3d44" opacity="0.85" transform="translate(18, 690) scale(0.62)">
+    <path d="M48,15 Q40,-5 30,-12 Q33,-2 42,8 M42,-2 Q48,-15 60,-22 Q52,-10 46,2 M45,-8 Q35,-20 28,-25 Q32,-15 40,-4 M52,15 Q60,-5 70,-12 Q67,-2 58,8 M58,-2 Q52,-15 40,-22 Q48,-10 54,2" stroke="#2d3d44" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <ellipse cx="50" cy="22" rx="7.5" ry="13" transform="rotate(-15 50 22)" />
+    <path d="M42,16 Q30,12 36,22 Z M58,16 Q70,12 64,22 Z" />
+    <path d="M44,28 Q40,48 35,62 L55,62 Q56,48 54,28 Z" />
+    <path d="M35,60 Q20,70 10,95 Q15,115 45,115 Q75,115 85,95 Q80,75 55,60 Z" />
+    <path d="M22,110 L18,175 L24,175 L30,115 Z" />
+    <path d="M34,110 L30,170 L35,170 L42,115 Z" />
+    <path d="M65,110 L60,175 L66,175 L73,115 Z" />
+    <path d="M78,110 L82,170 L87,170 L86,115 Z" />
+  </g>
+
+  <!-- ==================== POHON KIRI (SHIFTED FURTHER LEFT & LOWER) ==================== -->
+  <g transform="translate(-65, 940) scale(0.82)">
+    <!-- Main Tree Trunk & Organic Branches -->
+    <path d="M15,0 Q35,-90 28,-180 Q20,-260 45,-340 Q60,-390 75,-440" stroke="#503822" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <path d="M20,0 Q38,-90 32,-180 Q25,-260 48,-335" stroke="#684a30" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Major Branch: Lower-Right -->
+    <path d="M30,-140 Q65,-180 110,-200 Q145,-210 175,-205" stroke="#5a4028" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+    <path d="M85,-185 Q115,-225 145,-245" stroke="#684a30" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M130,-205 Q155,-235 180,-245" stroke="#755538" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M100,-195 Q125,-175 160,-170" stroke="#755538" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- Major Branch: Mid-Left -->
+    <path d="M25,-220 Q-5,-255 -35,-275 Q-65,-285 -95,-280" stroke="#5a4028" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M-10,-245 Q-30,-285 -60,-305" stroke="#684a30" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M-40,-275 Q-65,-305 -85,-315" stroke="#755538" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+
+    <!-- Major Branch: Upper-Right -->
+    <path d="M35,-290 Q75,-335 120,-355 Q150,-365 175,-360" stroke="#5a4028" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M90,-340 Q120,-375 148,-390" stroke="#684a30" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+    <path d="M60,-315 Q95,-310 130,-300" stroke="#755538" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+
+    <!-- Major Branch: Upper-Left & Crown -->
+    <path d="M45,-340 Q20,-380 5,-415 Q-10,-440 -25,-455" stroke="#5a4028" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <path d="M60,-390 Q70,-430 75,-465 Q78,-485 80,-500" stroke="#684a30" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M35,-370 Q10,-400 -5,-415" stroke="#755538" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Leaves -->
+    <g stroke="#1b2d31" stroke-width="0.5">
+      <path d="M110,-200 Q125,-218 140,-210 Q130,-195 110,-200 Z" fill="url(#leafTealDark)"/>
+      <path d="M125,-205 Q145,-220 158,-210 Q145,-198 125,-205 Z" fill="url(#leafTealMid)"/>
+      <path d="M145,-210 Q165,-225 178,-215 Q165,-202 145,-210 Z" fill="url(#leafSage)"/>
+      <path d="M160,-208 Q180,-218 192,-208 Q180,-195 160,-208 Z" fill="url(#leafGold)"/>
+      <path d="M175,-205 Q195,-210 205,-200 Q192,-190 175,-205 Z" fill="url(#leafTealMid)"/>
+
+      <path d="M115,-225 Q130,-245 145,-238 Q135,-222 115,-225 Z" fill="url(#leafTealDark)"/>
+      <path d="M130,-235 Q150,-252 162,-242 Q150,-228 130,-235 Z" fill="url(#leafGold)"/>
+      <path d="M145,-245 Q165,-260 178,-250 Q165,-235 145,-245 Z" fill="url(#leafSage)"/>
+
+      <path d="M100,-195 Q115,-180 130,-175 Q120,-162 100,-195 Z" fill="url(#leafTealMid)"/>
+      <path d="M125,-175 Q145,-165 160,-160 Q148,-150 125,-175 Z" fill="url(#leafSage)"/>
+      <path d="M140,-172 Q160,-160 172,-155 Q160,-145 140,-172 Z" fill="url(#leafGold)"/>
+
+      <path d="M-5,-255 Q-20,-272 -35,-265 Q-25,-250 -5,-255 Z" fill="url(#leafTealDark)"/>
+      <path d="M-25,-265 Q-45,-280 -58,-270 Q-45,-258 -25,-265 Z" fill="url(#leafTealMid)"/>
+      <path d="M-45,-275 Q-65,-290 -78,-280 Q-65,-265 -45,-275 Z" fill="url(#leafSage)"/>
+      <path d="M-65,-280 Q-85,-292 -98,-282 Q-85,-270 -65,-280 Z" fill="url(#leafGold)"/>
+      <path d="M-80,-282 Q-100,-288 -110,-278 Q-98,-268 -80,-282 Z" fill="url(#leafTealDark)"/>
+
+      <path d="M-30,-285 Q-45,-305 -60,-298 Q-50,-282 -30,-285 Z" fill="url(#leafTealMid)"/>
+      <path d="M-50,-298 Q-70,-315 -82,-305 Q-70,-290 -50,-298 Z" fill="url(#leafGold)"/>
+      <path d="M-65,-305 Q-85,-320 -98,-310 Q-85,-295 -65,-305 Z" fill="url(#leafSage)"/>
+
+      <path d="M75,-335 Q95,-352 110,-345 Q100,-330 75,-335 Z" fill="url(#leafTealDark)"/>
+      <path d="M95,-345 Q115,-360 128,-350 Q115,-338 95,-345 Z" fill="url(#leafTealMid)"/>
+      <path d="M115,-352 Q135,-368 148,-358 Q135,-345 115,-352 Z" fill="url(#leafSage)"/>
+      <path d="M135,-358 Q155,-370 168,-360 Q155,-348 135,-358 Z" fill="url(#leafGold)"/>
+      <path d="M150,-362 Q170,-368 182,-358 Q168,-348 150,-362 Z" fill="url(#leafTealDark)"/>
+
+      <path d="M90,-340 Q105,-360 120,-352 Q110,-338 90,-340 Z" fill="url(#leafTealMid)"/>
+      <path d="M110,-365 Q130,-382 142,-372 Q130,-358 110,-365 Z" fill="url(#leafGold)"/>
+      <path d="M128,-378 Q148,-395 160,-385 Q148,-370 128,-378 Z" fill="url(#leafSage)"/>
+
+      <path d="M60,-315 Q80,-302 95,-295 Q82,-285 60,-315 Z" fill="url(#leafTealDark)"/>
+      <path d="M85,-308 Q105,-295 120,-290 Q108,-278 85,-308 Z" fill="url(#leafSage)"/>
+      <path d="M105,-302 Q125,-290 138,-285 Q125,-275 105,-302 Z" fill="url(#leafGold)"/>
+
+      <path d="M45,-340 Q30,-360 15,-352 Q25,-335 45,-340 Z" fill="url(#leafTealDark)"/>
+      <path d="M20,-380 Q5,-400 -8,-392 Q2,-378 20,-380 Z" fill="url(#leafTealMid)"/>
+      <path d="M5,-415 Q-10,-432 -22,-422 Q-10,-408 5,-415 Z" fill="url(#leafSage)"/>
+      <path d="M-10,-440 Q-25,-458 -38,-448 Q-25,-435 -10,-440 Z" fill="url(#leafGold)"/>
+
+      <path d="M60,-390 Q75,-410 88,-402 Q78,-385 60,-390 Z" fill="url(#leafTealDark)"/>
+      <path d="M70,-430 Q85,-450 98,-442 Q88,-425 70,-430 Z" fill="url(#leafSage)"/>
+      <path d="M75,-465 Q90,-485 102,-478 Q92,-460 75,-465 Z" fill="url(#leafGold)"/>
+      <path d="M78,-485 Q88,-505 98,-500 Q90,-480 78,-485 Z" fill="url(#leafTealMid)"/>
+    </g>
+
+    <!-- Blossoms -->
+    <g transform="translate(145, -210) scale(1.15)">
+      <circle cx="0" cy="-14" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="5.5" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(175, -205) scale(0.95)">
+      <circle cx="0" cy="-12" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="0" cy="0" r="4.8" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(-65, -280) scale(1.1)">
+      <circle cx="0" cy="-13" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="12" cy="-4" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="7.5" cy="11" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-7.5" cy="11" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-12" cy="-4" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="5.2" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(120, -355) scale(1.2)">
+      <circle cx="0" cy="-14" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="5.8" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(70, -430) scale(1)">
+      <circle cx="0" cy="-12" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="0" cy="0" r="4.8" fill="url(#clCenter)"/>
+    </g>
+
+    <!-- Drifting Petals -->
+    <ellipse cx="90" cy="-140" rx="7" ry="4" fill="url(#clPetal)" opacity="0.8" transform="rotate(25 90 -140)"/>
+    <ellipse cx="150" cy="-155" rx="6" ry="3.5" fill="url(#clPetalPink)" opacity="0.75" transform="rotate(-15 150 -155)"/>
+  </g>
+
+  <!-- ==================== POHON KANAN (SHIFTED FURTHER RIGHT & LOWER) ==================== -->
+  <g transform="translate(515, 940) scale(-0.82, 0.82)">
+    <!-- Main Tree Trunk & Organic Branches -->
+    <path d="M15,0 Q35,-90 28,-180 Q20,-260 45,-340 Q60,-390 75,-440" stroke="#503822" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <path d="M20,0 Q38,-90 32,-180 Q25,-260 48,-335" stroke="#684a30" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Major Branch: Lower-Right -->
+    <path d="M30,-140 Q65,-180 110,-200 Q145,-210 175,-205" stroke="#5a4028" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+    <path d="M85,-185 Q115,-225 145,-245" stroke="#684a30" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M130,-205 Q155,-235 180,-245" stroke="#755538" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M100,-195 Q125,-175 160,-170" stroke="#755538" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- Major Branch: Mid-Left -->
+    <path d="M25,-220 Q-5,-255 -35,-275 Q-65,-285 -95,-280" stroke="#5a4028" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M-10,-245 Q-30,-285 -60,-305" stroke="#684a30" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M-40,-275 Q-65,-305 -85,-315" stroke="#755538" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+
+    <!-- Major Branch: Upper-Right -->
+    <path d="M35,-290 Q75,-335 120,-355 Q150,-365 175,-360" stroke="#5a4028" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M90,-340 Q120,-375 148,-390" stroke="#684a30" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+    <path d="M60,-315 Q95,-310 130,-300" stroke="#755538" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+
+    <!-- Major Branch: Upper-Left & Crown -->
+    <path d="M45,-340 Q20,-380 5,-415 Q-10,-440 -25,-455" stroke="#5a4028" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <path d="M60,-390 Q70,-430 75,-465 Q78,-485 80,-500" stroke="#684a30" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M35,-370 Q10,-400 -5,-415" stroke="#755538" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Leaves -->
+    <g stroke="#1b2d31" stroke-width="0.5">
+      <path d="M110,-200 Q125,-218 140,-210 Q130,-195 110,-200 Z" fill="url(#leafTealDark)"/>
+      <path d="M125,-205 Q145,-220 158,-210 Q145,-198 125,-205 Z" fill="url(#leafTealMid)"/>
+      <path d="M145,-210 Q165,-225 178,-215 Q165,-202 145,-210 Z" fill="url(#leafSage)"/>
+      <path d="M160,-208 Q180,-218 192,-208 Q180,-195 160,-208 Z" fill="url(#leafGold)"/>
+      <path d="M175,-205 Q195,-210 205,-200 Q192,-190 175,-205 Z" fill="url(#leafTealMid)"/>
+
+      <path d="M115,-225 Q130,-245 145,-238 Q135,-222 115,-225 Z" fill="url(#leafTealDark)"/>
+      <path d="M130,-235 Q150,-252 162,-242 Q150,-228 130,-235 Z" fill="url(#leafGold)"/>
+      <path d="M145,-245 Q165,-260 178,-250 Q165,-235 145,-245 Z" fill="url(#leafSage)"/>
+
+      <path d="M100,-195 Q115,-180 130,-175 Q120,-162 100,-195 Z" fill="url(#leafTealMid)"/>
+      <path d="M125,-175 Q145,-165 160,-160 Q148,-150 125,-175 Z" fill="url(#leafSage)"/>
+      <path d="M140,-172 Q160,-160 172,-155 Q160,-145 140,-172 Z" fill="url(#leafGold)"/>
+
+      <path d="M-5,-255 Q-20,-272 -35,-265 Q-25,-250 -5,-255 Z" fill="url(#leafTealDark)"/>
+      <path d="M-25,-265 Q-45,-280 -58,-270 Q-45,-258 -25,-265 Z" fill="url(#leafTealMid)"/>
+      <path d="M-45,-275 Q-65,-290 -78,-280 Q-65,-265 -45,-275 Z" fill="url(#leafSage)"/>
+      <path d="M-65,-280 Q-85,-292 -98,-282 Q-85,-270 -65,-280 Z" fill="url(#leafGold)"/>
+      <path d="M-80,-282 Q-100,-288 -110,-278 Q-98,-268 -80,-282 Z" fill="url(#leafTealDark)"/>
+
+      <path d="M-30,-285 Q-45,-305 -60,-298 Q-50,-282 -30,-285 Z" fill="url(#leafTealMid)"/>
+      <path d="M-50,-298 Q-70,-315 -82,-305 Q-70,-290 -50,-298 Z" fill="url(#leafGold)"/>
+      <path d="M-65,-305 Q-85,-320 -98,-310 Q-85,-295 -65,-305 Z" fill="url(#leafSage)"/>
+
+      <path d="M75,-335 Q95,-352 110,-345 Q100,-330 75,-335 Z" fill="url(#leafTealDark)"/>
+      <path d="M95,-345 Q115,-360 128,-350 Q115,-338 95,-345 Z" fill="url(#leafTealMid)"/>
+      <path d="M115,-352 Q135,-368 148,-358 Q135,-345 115,-352 Z" fill="url(#leafSage)"/>
+      <path d="M135,-358 Q155,-370 168,-360 Q155,-348 135,-358 Z" fill="url(#leafGold)"/>
+      <path d="M150,-362 Q170,-368 182,-358 Q168,-348 150,-362 Z" fill="url(#leafTealDark)"/>
+
+      <path d="M90,-340 Q105,-360 120,-352 Q110,-338 90,-340 Z" fill="url(#leafTealMid)"/>
+      <path d="M110,-365 Q130,-382 142,-372 Q130,-358 110,-365 Z" fill="url(#leafGold)"/>
+      <path d="M128,-378 Q148,-395 160,-385 Q148,-370 128,-378 Z" fill="url(#leafSage)"/>
+
+      <path d="M60,-315 Q80,-302 95,-295 Q82,-285 60,-315 Z" fill="url(#leafTealDark)"/>
+      <path d="M85,-308 Q105,-295 120,-290 Q108,-278 85,-308 Z" fill="url(#leafSage)"/>
+      <path d="M105,-302 Q125,-290 138,-285 Q125,-275 105,-302 Z" fill="url(#leafGold)"/>
+
+      <path d="M45,-340 Q30,-360 15,-352 Q25,-335 45,-340 Z" fill="url(#leafTealDark)"/>
+      <path d="M20,-380 Q5,-400 -8,-392 Q2,-378 20,-380 Z" fill="url(#leafTealMid)"/>
+      <path d="M5,-415 Q-10,-432 -22,-422 Q-10,-408 5,-415 Z" fill="url(#leafSage)"/>
+      <path d="M-10,-440 Q-25,-458 -38,-448 Q-25,-435 -10,-440 Z" fill="url(#leafGold)"/>
+
+      <path d="M60,-390 Q75,-410 88,-402 Q78,-385 60,-390 Z" fill="url(#leafTealDark)"/>
+      <path d="M70,-430 Q85,-450 98,-442 Q88,-425 70,-430 Z" fill="url(#leafSage)"/>
+      <path d="M75,-465 Q90,-485 102,-478 Q92,-460 75,-465 Z" fill="url(#leafGold)"/>
+      <path d="M78,-485 Q88,-505 98,-500 Q90,-480 78,-485 Z" fill="url(#leafTealMid)"/>
+    </g>
+
+    <!-- Blossoms -->
+    <g transform="translate(145, -210) scale(1.15)">
+      <circle cx="0" cy="-14" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="5.5" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(175, -205) scale(0.95)">
+      <circle cx="0" cy="-12" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="0" cy="0" r="4.8" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(-65, -280) scale(1.1)">
+      <circle cx="0" cy="-13" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="12" cy="-4" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="7.5" cy="11" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-7.5" cy="11" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-12" cy="-4" r="10.5" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="5.2" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(120, -355) scale(1.2)">
+      <circle cx="0" cy="-14" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="5.8" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(70, -430) scale(1)">
+      <circle cx="0" cy="-12" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="0" cy="0" r="4.8" fill="url(#clCenter)"/>
+    </g>
+
+    <!-- Drifting Petals -->
+    <ellipse cx="90" cy="-140" rx="7" ry="4" fill="url(#clPetal)" opacity="0.8" transform="rotate(25 90 -140)"/>
+    <ellipse cx="150" cy="-155" rx="6" ry="3.5" fill="url(#clPetalPink)" opacity="0.75" transform="rotate(-15 150 -155)"/>
+  </g>
+
+  <!-- BOTTOM CENTER FLOWER & LEAF BANK (Lowered) -->
+  <g transform="translate(140, 885) scale(0.9)">
+    <path d="M40,25 Q15,10 0,22 Q15,35 40,25 Z" fill="url(#leafTealDark)"/>
+    <path d="M60,20 Q85,5 110,18 Q95,32 60,20 Z" fill="url(#leafTealMid)"/>
+    <path d="M120,25 Q145,12 170,24 Q155,36 120,25 Z" fill="url(#leafGold)"/>
+    <path d="M85,30 Q65,15 50,28 Q65,40 85,30 Z" fill="url(#leafSage)"/>
+    <path d="M100,32 Q125,18 140,30 Q125,42 100,32 Z" fill="url(#leafTealDark)"/>
+
+    <g transform="translate(85, 10) scale(1.25)">
+      <circle cx="0" cy="-14" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-8" cy="12" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="-13" cy="-4" r="11" fill="url(#clPetal)" stroke="url(#leafGold)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="6" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(35, 20) scale(1)">
+      <circle cx="0" cy="-12" r="9" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="11" cy="-3" r="9" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="0" cy="0" r="4.8" fill="url(#clCenter)"/>
+    </g>
+    <g transform="translate(135, 20) scale(1)">
+      <circle cx="0" cy="-12" r="9" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-7" cy="10" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="-11" cy="-3" r="9.5" fill="url(#clPetalPink)" stroke="url(#leafGold)" stroke-width="0.4"/>
+      <circle cx="0" cy="0" r="4.8" fill="url(#clCenter)"/>
+    </g>
+  </g>
+
+  <!-- Soft Mist Overlay at bottom -->
+  <ellipse cx="225" cy="890" rx="280" ry="50" fill="#edf1f3" opacity="0.3" filter="url(#clMist)" />
+
+</svg>

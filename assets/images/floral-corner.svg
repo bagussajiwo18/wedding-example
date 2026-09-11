@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" fill="none">
+    <defs>
+        <linearGradient id="goldCorner" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F2DFB3"/>
+            <stop offset="50%" stop-color="#C9A85C"/>
+            <stop offset="100%" stop-color="#9C7932"/>
+        </linearGradient>
+        <linearGradient id="leafCorner" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#96A695"/>
+            <stop offset="100%" stop-color="#556554"/>
+        </linearGradient>
+        <linearGradient id="roseCorner" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#F0E8DC"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Main Stems -->
+    <path d="M 15,15 Q 120,40 180,140 T 230,230" stroke="url(#goldCorner)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path d="M 25,25 Q 70,110 130,170 T 215,215" stroke="url(#goldCorner)" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+    
+    <!-- Botanical Leaves -->
+    <path d="M 45,35 Q 25,60 40,80 Q 65,65 45,35 Z" fill="url(#leafCorner)" opacity="0.85"/>
+    <path d="M 75,45 Q 60,20 85,15 Q 95,40 75,45 Z" fill="url(#goldCorner)" opacity="0.9"/>
+    <path d="M 95,75 Q 75,100 95,120 Q 120,105 95,75 Z" fill="url(#leafCorner)" opacity="0.85"/>
+    <path d="M 130,110 Q 155,90 170,110 Q 155,135 130,110 Z" fill="url(#leafCorner)" opacity="0.8"/>
+    <path d="M 170,155 Q 195,140 210,160 Q 190,185 170,155 Z" fill="url(#goldCorner)" opacity="0.85"/>
+    <path d="M 145,180 Q 130,205 150,220 Q 170,200 145,180 Z" fill="url(#leafCorner)" opacity="0.85"/>
+    
+    <!-- Corner Flower Bloom -->
+    <g transform="translate(60, 60)">
+        <ellipse cx="0" cy="-14" rx="10" ry="16" fill="url(#roseCorner)" stroke="url(#goldCorner)" stroke-width="0.8"/>
+        <ellipse cx="-12" cy="-6" rx="9" ry="14" transform="rotate(-45 -12 -6)" fill="url(#roseCorner)" stroke="url(#goldCorner)" stroke-width="0.8"/>
+        <ellipse cx="12" cy="-6" rx="9" ry="14" transform="rotate(45 12 -6)" fill="url(#roseCorner)" stroke="url(#goldCorner)" stroke-width="0.8"/>
+        <ellipse cx="-10" cy="10" rx="9" ry="14" transform="rotate(-90 -10 10)" fill="url(#roseCorner)" stroke="url(#goldCorner)" stroke-width="0.8"/>
+        <ellipse cx="10" cy="10" rx="9" ry="14" transform="rotate(90 10 10)" fill="url(#roseCorner)" stroke="url(#goldCorner)" stroke-width="0.8"/>
+        <circle cx="0" cy="0" r="7" fill="url(#goldCorner)"/>
+    </g>
+    
+    <circle cx="15" cy="15" r="4" fill="url(#goldCorner)"/>
+    <circle cx="190" cy="125" r="3.5" fill="url(#goldCorner)"/>
+    <circle cx="120" cy="195" r="3.5" fill="url(#goldCorner)"/>
+</svg>

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 800" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <!-- Stone Gradients -->
+    <linearGradient id="stoneLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ecd7b0" />
+      <stop offset="35%" stop-color="#f9edd6" />
+      <stop offset="70%" stop-color="#ead4ad" />
+      <stop offset="100%" stop-color="#d6b887" />
+    </linearGradient>
+
+    <linearGradient id="stoneDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecd9b6" />
+      <stop offset="100%" stop-color="#cdae7b" />
+    </linearGradient>
+
+    <linearGradient id="pillarFlute" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c6a775" />
+      <stop offset="25%" stop-color="#f7ecd7" />
+      <stop offset="50%" stop-color="#dbbe8e" />
+      <stop offset="75%" stop-color="#fdf8ed" />
+      <stop offset="100%" stop-color="#bfa06e" />
+    </linearGradient>
+
+    <filter id="archShadow" x="-10%" y="-5%" width="120%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#302414" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Left Pillar Base & Shaft -->
+  <g id="left-column" filter="url(#archShadow)">
+    <!-- Capital Top -->
+    <path d="M0,230 L55,230 L60,250 L-5,250 Z" fill="url(#stoneDark)" />
+    <!-- Capital Scrollwork / Carvings -->
+    <rect x="-2" y="248" width="62" height="6" fill="#ba9966" />
+    <path d="M2,254 C10,270 20,270 28,254 C36,270 46,270 54,254 Z" fill="url(#stoneLight)" stroke="#b89764" stroke-width="1.5" />
+    <rect x="-4" y="278" width="66" height="12" fill="url(#stoneLight)" rx="2" />
+    
+    <!-- Fluted Pillar Shaft -->
+    <rect x="0" y="290" width="56" height="440" fill="url(#pillarFlute)" />
+    <!-- Fluting Lines (Vertical Grooves) -->
+    <line x1="8" y1="290" x2="8" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+    <line x1="18" y1="290" x2="18" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+    <line x1="28" y1="290" x2="28" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+    <line x1="38" y1="290" x2="38" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+    <line x1="48" y1="290" x2="48" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+
+    <!-- Pillar Base / Plinth Molding -->
+    <rect x="-3" y="730" width="64" height="14" fill="url(#stoneLight)" rx="2" stroke="#b89764" stroke-width="1" />
+    <rect x="-6" y="744" width="70" height="56" fill="url(#stoneDark)" stroke="#b3915c" stroke-width="1" />
+  </g>
+
+  <!-- Right Pillar Base & Shaft -->
+  <g id="right-column" filter="url(#archShadow)">
+    <!-- Capital Top -->
+    <path d="M395,230 L450,230 L455,250 L390,250 Z" fill="url(#stoneDark)" />
+    <!-- Capital Scrollwork / Carvings -->
+    <rect x="390" y="248" width="62" height="6" fill="#ba9966" />
+    <path d="M396,254 C404,270 414,270 422,254 C430,270 440,270 448,254 Z" fill="url(#stoneLight)" stroke="#b89764" stroke-width="1.5" />
+    <rect x="388" y="278" width="66" height="12" fill="url(#stoneLight)" rx="2" />
+
+    <!-- Fluted Pillar Shaft -->
+    <rect x="394" y="290" width="56" height="440" fill="url(#pillarFlute)" />
+    <!-- Fluting Lines -->
+    <line x1="402" y1="290" x2="402" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+    <line x1="412" y1="290" x2="412" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+    <line x1="422" y1="290" x2="422" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+    <line x1="432" y1="290" x2="432" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+    <line x1="442" y1="290" x2="442" y2="730" stroke="#b3915c" stroke-width="2.2" opacity="0.6" />
+
+    <!-- Pillar Base / Plinth Molding -->
+    <rect x="389" y="730" width="64" height="14" fill="url(#stoneLight)" rx="2" stroke="#b89764" stroke-width="1" />
+    <rect x="386" y="744" width="70" height="56" fill="url(#stoneDark)" stroke="#b3915c" stroke-width="1" />
+  </g>
+
+  <!-- Grand Roman Top Arch -->
+  <g id="top-arch" filter="url(#archShadow)">
+    <!-- Outer Arch Moldings -->
+    <path d="M-10,230 L-10,0 L460,0 L460,230 L395,230 A170,170 0 0,0 55,230 Z" fill="url(#stoneLight)" />
+    
+    <!-- Arch Contour Rib 1 -->
+    <path d="M55,230 A170,170 0 0,1 395,230" fill="none" stroke="#ba9763" stroke-width="14" />
+    <path d="M55,230 A170,170 0 0,1 395,230" fill="none" stroke="#fcedd7" stroke-width="6" />
+
+    <!-- Rosette / Egg-and-Dart Relief Pattern on Arch -->
+    <g fill="#c8a571" stroke="#f6ead5" stroke-width="1.2">
+      <circle cx="85" cy="185" r="7" />
+      <circle cx="112" cy="142" r="7" />
+      <circle cx="145" cy="108" r="7" />
+      <circle cx="184" cy="84" r="7" />
+      <circle cx="225" cy="74" r="7" />
+      <circle cx="266" cy="84" r="7" />
+      <circle cx="305" cy="108" r="7" />
+      <circle cx="338" cy="142" r="7" />
+      <circle cx="365" cy="185" r="7" />
+    </g>
+
+    <!-- Keystone (Central Emblem at top of arch) -->
+    <g transform="translate(225, 55)">
+      <path d="M-22,-25 L22,-25 L16,22 L-16,22 Z" fill="url(#stoneDark)" stroke="#b59360" stroke-width="2" />
+      <path d="M-18,-20 L18,-20 L12,18 L-12,18 Z" fill="url(#stoneLight)" />
+      <!-- Keystone Ornamental Crest -->
+      <circle cx="0" cy="-2" r="7" fill="#bfa06e" />
+      <circle cx="0" cy="-2" r="4" fill="#fcedd7" />
+    </g>
+
+    <!-- Inner Arch Highlight line -->
+    <path d="M55,230 A170,170 0 0,1 395,230" fill="none" stroke="#7e653f" stroke-width="2.5" opacity="0.4" />
+  </g>
+</svg>

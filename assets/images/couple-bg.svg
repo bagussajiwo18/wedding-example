@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 900" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="coupleSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8ecee"/>
+      <stop offset="40%" stop-color="#f0f3f5"/>
+      <stop offset="75%" stop-color="#f5f7f8"/>
+      <stop offset="100%" stop-color="#e2e8ec"/>
+    </linearGradient>
+    <linearGradient id="cGoldLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b86e"/>
+      <stop offset="50%" stop-color="#b99650"/>
+      <stop offset="100%" stop-color="#8a6e30"/>
+    </linearGradient>
+    <linearGradient id="cGoldLeaf2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8cfa0"/>
+      <stop offset="60%" stop-color="#c9a858"/>
+      <stop offset="100%" stop-color="#9a7832"/>
+    </linearGradient>
+    <linearGradient id="cPetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#f5f0e8"/>
+      <stop offset="100%" stop-color="#e8dece"/>
+    </linearGradient>
+    <linearGradient id="cPetal2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf8f0"/>
+      <stop offset="60%" stop-color="#f0e8d8"/>
+      <stop offset="100%" stop-color="#e0d0b8"/>
+    </linearGradient>
+    <radialGradient id="cFlowerCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0d898"/>
+      <stop offset="70%" stop-color="#d4a84e"/>
+      <stop offset="100%" stop-color="#a87828"/>
+    </radialGradient>
+    <linearGradient id="cDarkLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a5060"/>
+      <stop offset="100%" stop-color="#263540"/>
+    </linearGradient>
+    <linearGradient id="cMidLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4e6878"/>
+      <stop offset="100%" stop-color="#324858"/>
+    </linearGradient>
+    <filter id="cMist">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="cSoftBlur">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+  </defs>
+
+  <!-- Base sky background -->
+  <rect width="450" height="900" fill="url(#coupleSky)"/>
+
+  <!-- Subtle wave lines (Japanese aesthetic, top area only) -->
+  <g opacity="0.10" stroke="#5a6e7a" stroke-width="0.7" fill="none">
+    <path d="M-20,45 Q60,20 120,45 T260,45 T400,45 T540,45"/>
+    <path d="M-20,62 Q60,37 120,62 T260,62 T400,62 T540,62"/>
+    <path d="M-20,79 Q60,54 120,79 T260,79 T400,79 T540,79"/>
+  </g>
+
+  <!-- GOLDEN TREE ornament: TOP RIGHT -->
+  <g transform="translate(310, 0) scale(1.35)" opacity="0.88">
+    <path d="M90,140 Q88,100 85,60" stroke="#8a6e30" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M85,60 Q70,35 45,25 M85,60 Q100,30 125,18 M85,75 Q60,55 38,52 M85,75 Q110,52 135,46 M85,95 Q65,80 50,78 M85,95 Q108,78 125,72" stroke="#8a6e30" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M60,40 Q48,25 36,18 M60,40 Q55,28 52,15 M115,30 Q125,18 138,12 M115,30 Q122,16 128,5" stroke="#8a6e30" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+    <ellipse cx="42" cy="20" rx="22" ry="14" fill="#c9a050" opacity="0.9" transform="rotate(-30 42 20)"/>
+    <ellipse cx="58" cy="12" rx="18" ry="11" fill="#d4b86e" opacity="0.85" transform="rotate(-15 58 12)"/>
+    <ellipse cx="128" cy="14" rx="22" ry="14" fill="#c9a050" opacity="0.9" transform="rotate(30 128 14)"/>
+    <ellipse cx="112" cy="6" rx="18" ry="11" fill="#d4b86e" opacity="0.85" transform="rotate(15 112 6)"/>
+    <ellipse cx="36" cy="50" rx="20" ry="12" fill="#b99650" opacity="0.8" transform="rotate(-20 36 50)"/>
+    <ellipse cx="138" cy="44" rx="20" ry="12" fill="#b99650" opacity="0.8" transform="rotate(20 138 44)"/>
+    <ellipse cx="46" cy="76" rx="16" ry="10" fill="#c9a050" opacity="0.75" transform="rotate(-10 46 76)"/>
+    <ellipse cx="128" cy="70" rx="16" ry="10" fill="#c9a050" opacity="0.75" transform="rotate(10 128 70)"/>
+  </g>
+
+  <!-- GOLDEN TREE ornament: TOP LEFT -->
+  <g transform="translate(-35, 0) scale(1.35)" opacity="0.88">
+    <path d="M58,140 Q60,100 62,60" stroke="#8a6e30" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M62,60 Q78,35 103,25 M62,60 Q48,30 24,18 M62,75 Q86,55 110,52 M62,75 Q38,52 12,46 M62,95 Q82,80 98,78 M62,95 Q40,78 22,72" stroke="#8a6e30" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M86,40 Q100,25 112,18 M86,40 Q92,28 96,15 M30,30 Q18,18 5,12 M30,30 Q24,16 18,5" stroke="#8a6e30" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+    <ellipse cx="108" cy="20" rx="22" ry="14" fill="#c9a050" opacity="0.9" transform="rotate(30 108 20)"/>
+    <ellipse cx="92" cy="12" rx="18" ry="11" fill="#d4b86e" opacity="0.85" transform="rotate(15 92 12)"/>
+    <ellipse cx="22" cy="14" rx="22" ry="14" fill="#c9a050" opacity="0.9" transform="rotate(-30 22 14)"/>
+    <ellipse cx="38" cy="6" rx="18" ry="11" fill="#d4b86e" opacity="0.85" transform="rotate(-15 38 6)"/>
+    <ellipse cx="114" cy="50" rx="20" ry="12" fill="#b99650" opacity="0.8" transform="rotate(20 114 50)"/>
+    <ellipse cx="10" cy="44" rx="20" ry="12" fill="#b99650" opacity="0.8" transform="rotate(-20 10 44)"/>
+    <ellipse cx="100" cy="76" rx="16" ry="10" fill="#c9a050" opacity="0.75" transform="rotate(10 100 76)"/>
+    <ellipse cx="24" cy="70" rx="16" ry="10" fill="#c9a050" opacity="0.75" transform="rotate(-10 24 70)"/>
+  </g>
+
+  <!-- =====================================================================
+       BOTTOM FLOWERING TREES (full botanical scene at the bottom)
+       ===================================================================== -->
+
+  <!-- FLOWERING TREE: BOTTOM LEFT — tall trunk with spread branches + blossoms -->
+  <g transform="translate(-10, 900) scale(1)" opacity="0.92">
+    <!-- Trunk -->
+    <path d="M60,0 Q58,-60 55,-130 Q52,-180 50,-230" stroke="#7a6040" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <!-- Main left branch -->
+    <path d="M55,-130 Q35,-145 10,-155 Q-5,-145 -20,-135" stroke="#7a6040" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <!-- Sub-branches left -->
+    <path d="M30,-148 Q18,-165 8,-175 M30,-148 Q20,-155 15,-168" stroke="#8a7050" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M0,-150 Q-12,-162 -18,-175 M-5,-142 Q-15,-150 -22,-158" stroke="#8a7050" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <!-- Main right branch -->
+    <path d="M55,-150 Q80,-168 100,-175 Q115,-168 128,-160" stroke="#7a6040" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <!-- Sub-branches right -->
+    <path d="M90,-172 Q98,-188 105,-200 M90,-172 Q102,-178 112,-190" stroke="#8a7050" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M118,-165 Q128,-175 134,-188 M122,-158 Q132,-162 140,-170" stroke="#8a7050" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <!-- Upper branches -->
+    <path d="M52,-200 Q42,-215 30,-222 M52,-200 Q62,-218 72,-225 M52,-215 Q45,-228 38,-238" stroke="#8a7050" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- Foliage/Leaves: dark teal layers at base -->
+    <path d="M-25,0 Q20,-25 60,-10 Q100,-25 135,0 Q100,20 60,8 Q20,20 -25,0 Z" fill="url(#cDarkLeaf)" opacity="0.85"/>
+    <path d="M-10,-15 Q30,-40 65,-25 Q100,-40 125,-15 Q100,5 65,-8 Q30,5 -10,-15 Z" fill="url(#cMidLeaf)" opacity="0.75"/>
+    <!-- Golden autumn leaves at base -->
+    <path d="M5,-10 Q40,-35 75,-15 Q50,5 5,-10 Z" fill="url(#cGoldLeaf)" opacity="0.8"/>
+    <path d="M40,-20 Q80,-45 115,-25 Q85,-5 40,-20 Z" fill="url(#cGoldLeaf2)" opacity="0.75"/>
+    <!-- CHERRY BLOSSOMS — left cluster -->
+    <g transform="translate(8, -178)">
+      <circle cx="0" cy="-10" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="9" cy="-3" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="6" cy="8" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="-6" cy="8" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="-9" cy="-3" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="0" cy="0" r="4" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(-10, -165)">
+      <circle cx="0" cy="-8" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="7" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="4" cy="7" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="-4" cy="7" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="-7" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(25, -195)">
+      <circle cx="0" cy="-9" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="8" cy="-3" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="5" cy="8" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="-5" cy="8" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="-8" cy="-3" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="0" cy="0" r="3.8" fill="url(#cFlowerCenter)"/>
+    </g>
+    <!-- CHERRY BLOSSOMS — right cluster -->
+    <g transform="translate(105, -190)">
+      <circle cx="0" cy="-10" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="10" cy="-3" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="6" cy="9" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="-6" cy="9" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="-10" cy="-3" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="0" cy="0" r="4.2" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(128, -174)">
+      <circle cx="0" cy="-8" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="8" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="5" cy="7" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="-5" cy="7" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="-8" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#cFlowerCenter)"/>
+    </g>
+    <!-- CHERRY BLOSSOMS — top cluster -->
+    <g transform="translate(50, -238)">
+      <circle cx="0" cy="-11" r="9" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="10" cy="-4" r="9" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="7" cy="10" r="9" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="-7" cy="10" r="9" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="-10" cy="-4" r="9" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="0" cy="0" r="4.5" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(36, -222)">
+      <circle cx="0" cy="-8" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="7" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="4" cy="7" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="-4" cy="7" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="-7" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(68, -227)">
+      <circle cx="0" cy="-8" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="8" cy="-2" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="5" cy="8" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="-5" cy="8" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="-8" cy="-2" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="0" cy="0" r="3.8" fill="url(#cFlowerCenter)"/>
+    </g>
+    <!-- Scattered petals drifting -->
+    <ellipse cx="20" cy="-130" rx="5" ry="3" fill="url(#cPetal)" opacity="0.65" transform="rotate(25 20 -130)"/>
+    <ellipse cx="80" cy="-115" rx="4" ry="2.5" fill="url(#cPetal2)" opacity="0.6" transform="rotate(-15 80 -115)"/>
+    <ellipse cx="50" cy="-95" rx="4" ry="2.5" fill="url(#cPetal)" opacity="0.55" transform="rotate(35 50 -95)"/>
+  </g>
+
+  <!-- FLOWERING TREE: BOTTOM RIGHT — mirrored, slightly different arrangement -->
+  <g transform="translate(460, 900) scale(-1,1)" opacity="0.9">
+    <!-- Trunk -->
+    <path d="M60,0 Q58,-55 55,-125 Q52,-175 50,-225" stroke="#7a6040" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <!-- Main left branch -->
+    <path d="M55,-125 Q32,-140 8,-148 Q-5,-140 -22,-130" stroke="#7a6040" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M28,-143 Q15,-158 5,-170 M25,-140 Q14,-150 8,-163" stroke="#8a7050" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M-2,-145 Q-14,-156 -20,-168 M-8,-138 Q-18,-148 -24,-160" stroke="#8a7050" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <!-- Main right branch -->
+    <path d="M55,-148 Q82,-165 102,-172 Q118,-165 130,-155" stroke="#7a6040" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M92,-168 Q100,-185 108,-196 M95,-165 Q106,-175 115,-186" stroke="#8a7050" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M120,-160 Q130,-172 136,-185 M124,-154 Q135,-160 142,-170" stroke="#8a7050" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <!-- Upper trunk continuation -->
+    <path d="M52,-196 Q42,-212 30,-220 M52,-196 Q62,-215 72,-222 M50,-210 Q44,-225 36,-234" stroke="#8a7050" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- Dark foliage at base -->
+    <path d="M-25,0 Q20,-25 60,-10 Q100,-25 135,0 Q100,20 60,8 Q20,20 -25,0 Z" fill="url(#cDarkLeaf)" opacity="0.85"/>
+    <path d="M-10,-15 Q28,-38 62,-22 Q98,-38 122,-15 Q98,2 62,-10 Q28,2 -10,-15 Z" fill="url(#cMidLeaf)" opacity="0.75"/>
+    <!-- Golden leaves at base -->
+    <path d="M5,-10 Q42,-35 78,-15 Q52,5 5,-10 Z" fill="url(#cGoldLeaf)" opacity="0.82"/>
+    <path d="M42,-20 Q82,-44 116,-24 Q86,-5 42,-20 Z" fill="url(#cGoldLeaf2)" opacity="0.75"/>
+    <!-- BLOSSOMS — left cluster -->
+    <g transform="translate(8, -172)">
+      <circle cx="0" cy="-10" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="10" cy="-3" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="6" cy="9" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="-6" cy="9" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="-10" cy="-3" r="8.5" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="0" cy="0" r="4.2" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(-12, -160)">
+      <circle cx="0" cy="-8" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="8" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="5" cy="7" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="-5" cy="7" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="-8" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.9"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(28, -190)">
+      <circle cx="0" cy="-9" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="8" cy="-3" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="5" cy="8" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="-5" cy="8" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="-8" cy="-3" r="7.5" fill="url(#cPetal)" opacity="0.9"/>
+      <circle cx="0" cy="0" r="3.8" fill="url(#cFlowerCenter)"/>
+    </g>
+    <!-- BLOSSOMS — right cluster -->
+    <g transform="translate(108, -185)">
+      <circle cx="0" cy="-10" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="9" cy="-3" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="6" cy="8" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="-6" cy="8" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="-9" cy="-3" r="8" fill="url(#cPetal)" opacity="0.95"/>
+      <circle cx="0" cy="0" r="4" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(130, -168)">
+      <circle cx="0" cy="-8" r="7" fill="url(#cPetal2)" opacity="0.88"/>
+      <circle cx="8" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.88"/>
+      <circle cx="5" cy="7" r="7" fill="url(#cPetal2)" opacity="0.88"/>
+      <circle cx="-5" cy="7" r="7" fill="url(#cPetal2)" opacity="0.88"/>
+      <circle cx="-8" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.88"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#cFlowerCenter)"/>
+    </g>
+    <!-- BLOSSOMS — top cluster -->
+    <g transform="translate(50, -234)">
+      <circle cx="0" cy="-11" r="9" fill="url(#cPetal)" opacity="0.92"/>
+      <circle cx="10" cy="-4" r="9" fill="url(#cPetal)" opacity="0.92"/>
+      <circle cx="7" cy="10" r="9" fill="url(#cPetal)" opacity="0.92"/>
+      <circle cx="-7" cy="10" r="9" fill="url(#cPetal)" opacity="0.92"/>
+      <circle cx="-10" cy="-4" r="9" fill="url(#cPetal)" opacity="0.92"/>
+      <circle cx="0" cy="0" r="4.5" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(35, -218)">
+      <circle cx="0" cy="-8" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="7" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="4" cy="7" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="-4" cy="7" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="-7" cy="-2" r="7" fill="url(#cPetal2)" opacity="0.85"/>
+      <circle cx="0" cy="0" r="3.5" fill="url(#cFlowerCenter)"/>
+    </g>
+    <g transform="translate(70, -222)">
+      <circle cx="0" cy="-8" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="8" cy="-2" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="5" cy="8" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="-5" cy="8" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="-8" cy="-2" r="7.5" fill="url(#cPetal)" opacity="0.88"/>
+      <circle cx="0" cy="0" r="3.8" fill="url(#cFlowerCenter)"/>
+    </g>
+    <!-- Scattered petals -->
+    <ellipse cx="25" cy="-128" rx="5" ry="3" fill="url(#cPetal)" opacity="0.6" transform="rotate(20 25 -128)"/>
+    <ellipse cx="78" cy="-110" rx="4" ry="2.5" fill="url(#cPetal2)" opacity="0.55" transform="rotate(-20 78 -110)"/>
+    <ellipse cx="52" cy="-90" rx="4" ry="2.5" fill="url(#cPetal)" opacity="0.5" transform="rotate(30 52 -90)"/>
+  </g>
+
+  <!-- Soft mist overlay at bottom -->
+  <ellipse cx="225" cy="878" rx="280" ry="65" fill="#edf1f3" opacity="0.5" filter="url(#cMist)"/>
+
+</svg>
