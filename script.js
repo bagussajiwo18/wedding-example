@@ -12,26 +12,26 @@
 const weddingConfig = {
     // Mempelai Pria (The Groom)
     groom: {
-        name: "Habib",
-        fullName: "Habib Yulianto, S.Kom.",
+        name: "Mai",
+        fullName: "Mai",
         father: "Bapak H. Sukardi",
         mother: "Ibu Hj. Aminah",
-        instagram: "@habibyulianto",
-        photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=700&auto=format&fit=crop"
+        instagram: "@mai",
+        photo: "assets/images/photo/mai.jpeg"
     },
 
     // Mempelai Wanita (The Bride)
     bride: {
-        name: "Adiba",
-        fullName: "Adiba Putri Salsabila, S.Pd.",
+        name: "Lia",
+        fullName: "Lia",
         father: "Bapak Drs. H. Bambang Wijaya",
         mother: "Ibu Hj. Siti Nurhaliza",
-        instagram: "@adibasalsabila",
-        photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=700&auto=format&fit=crop"
+        instagram: "@lia",
+        photo: "assets/images/photo/lia.jpeg"
     },
 
     // Cover Photo (Fullscreen)
-    coverPhoto: "assets/images/habib_adiba.jpeg",
+    coverPhoto: "assets/images/photo/mai_lia2.jpeg",
 
     // Tanggal Pernikahan (ISO Format untuk Countdown Timer)
     weddingDate: "2026-12-10T10:00:00",
@@ -59,24 +59,19 @@ const weddingConfig = {
     // Love Story Timeline
     loveStory: [
         {
-            year: "2019",
-            title: "First Meet",
-            description: "Pertemuan pertama yang tak sengaja di perpustakaan kampus mengawali percakapan sederhana yang berkesan."
+            year: "2024",
+            title: "Ketika Notifikasi Telegram Mengubah Segalanya.",
+            description: "Semuanya awalnya sederhana banget. Nggak ada niat cari jodoh, cuma iseng gabung di salah satu grup Telegram. Suatu hari, ada satu pesan masuk di private chat (PC). Isinya simpel, cuma bahas salah satu topik yang sempat kita obrolin di grup. Awalnya cuma balas seadanya, sekadar sopan santun. Tapi makin hari, obrolan di Telegram malah makin ngalir. Dari yang cuma bales pesan jam-jaman sekali, berubah jadi kebiasaan wajib setiap hari. Fitur voice note (VN) yang durasinya menit-menitan jadi teman setia pas jalan pulang atau sebelum tidur. Lucunya, kita sama-sama cuma kenal dari foto profil yang kadang malah foto kartun atau pemandangan."
         },
         {
-            year: "2020",
-            title: "Growing Closer",
-            description: "Melewati berbagai obrolan mendalam dan menemukan kesamaan visi serta nilai hidup yang saling melengkapi."
-        },
-        {
-            year: "2023",
-            title: "Engagement Day",
-            description: "Dengan restu kedua orang tua, kami mengikat janji suci pertunangan untuk melangkah ke jenjang yang lebih serius."
+            year: "2025",
+            title: "Dari Chat Rahasia Menjadi Pertemuan Nyata",
+            description: "Setelah berbulan-bulan cuma tukar cerita lewat ketikan dan suara di Telegram, akhirnya kita memberanikan diri buat ketemu langsung. Bukan di kafe mewah atau tempat romantis, pertemuan pertama kami justru terjadi di sebuah warung sembako yang tenang. Di antara aroma khas toko, deretan beras, dan riuhnya suasana sekitar, tatapan kami pertama kali bertemu. Rasa gugup yang tadinya membuncah mendadak sirna saat mendengar suaranya secara langsung—suara yang biasanya cuma hadir lewat pengeras suara ponsel, kini terdengar begitu dekat dan nyata. Sederhananya suasana warung hari itu justru membuat momen kami terasa begitu intim dan tulus. Siapa sangka, aplikasi chat yang serba virtual itu menuntun langkah kami pada perjumpaan yang begitu membumi. Dari sekadar pesan di layar Telegram, kini ia jadi sosok nyata tempat hatiku berlabuh."
         },
         {
             year: "2026",
-            title: "The Wedding Day",
-            description: "Mengucap ikrar suci pernikahan di hadapan Allah SWT untuk mengarungi bahtera rumah tangga selamanya."
+            title: "Melangkah ke Jenjang yang Lebih Hangat",
+            description: "Setelah perjalanan panjang yang dimulai dari ketikan sederhana di Telegram hingga tatapan canggung di warung sembako, hari yang paling dinantikan itu akhirnya tiba. Bukan lagi tentang kami berdua, melainkan tentang menyatukan dua ikatan keluarga besar. Rasa gugup kali ini jauh berbeda dibanding saat pertama kali bertemu dulu. Di ruang tamu yang dipenuhi senyum hangat dan aroma teh manis, kami duduk bersisian. Ada desir haru saat melihat kedua orang tua saling bertukar cerita, tertawa bersama, dan menyampaikan niat baik yang selama ini kami simpan rapi dalam doa. ​Di tengah riuhnya obrolan keluarga, sesekali mata kami saling bertatap. Rasanya masih seperti mimpi—bagaimana sosok yang dulunya hanya berupa username di layar ponsel, kini duduk manis di sebelahku dengan restu penuh dari orang-orang tercinta. Suasana pertemuan keluarga yang sederhana namun sarat makna ini makin meyakinkan kami bahwa jalan yang kita tempuh memang sudah dituntun ke arah yang benar. Hadirnya restu dan tawa dari orang tua menjadi pelengkap terindah dalam kisah kita. Dari sebuah pesan pribadi di aplikasi chat, kini langkah kita makin mantap menuju ikatan suci yang sesungguhnya."
         }
     ],
 
@@ -93,32 +88,32 @@ const weddingConfig = {
     // Galeri Foto (Editorial Photo Grid & Lightbox)
     gallery: [
         {
-            url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=900&auto=format&fit=crop",
+            url: "assets/images/photo/mai_lia1.jpeg",
             caption: "A Promise Under The Sun",
             type: "portrait"
         },
         {
-            url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=900&auto=format&fit=crop",
+            url: "assets/images/photo/mai_lia2.jpeg",
             caption: "Pure Radiance",
             type: "square"
         },
         {
-            url: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=900&auto=format&fit=crop",
+            url: "assets/images/photo/Mai_lia3.jpeg",
             caption: "Timeless Embrace",
             type: "square"
         },
         {
-            url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop",
+            url: "assets/images/photo/mai_lia4.jpeg",
             caption: "Editorial Elegance",
             type: "landscape"
         },
         {
-            url: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=900&auto=format&fit=crop",
+            url: "assets/images/photo/mai_lia5.jpeg",
             caption: "Golden Sunset Memories",
             type: "portrait"
         },
         {
-            url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=900&auto=format&fit=crop",
+            url: "assets/images/photo/mai_lia6.jpeg",
             caption: "Whispers of Love",
             type: "square"
         }
@@ -129,23 +124,23 @@ const weddingConfig = {
         {
             bank: "BCA",
             number: "8120938471",
-            name: "HABIB YULIANTO"
+            name: "MAI"
         },
         {
             bank: "DANA",
             number: "081234567890",
-            name: "HABIB YULIANTO"
+            name: "MAI"
         },
         {
             bank: "MANDIRI",
             number: "1440019283741",
-            name: "ADIBA PUTRI SALSABILA"
+            name: "LIA"
         }
     ],
 
     // Kado Fisik
     physicalGift: {
-        receiver: "Habib Yulianto & Adiba Putri",
+        receiver: "Mai & Lia",
         phone: "0812-3456-7890",
         address: "Jl. Melati No. 18, RT 03 / RW 02, Kec. Wates, Kab. Kediri, Jawa Timur (Kode Pos 64174)"
     },
